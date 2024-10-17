@@ -1,3 +1,3 @@
-##Automated Intelligence Community College
+Automated Intelligence Community College
 
 Welcome
