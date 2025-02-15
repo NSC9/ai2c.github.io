@@ -5,11 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automated Intelligence Community College</title>
     <style>
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(0, 0, 255, 0.8);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(0, 0, 255, 1), 0 0 25px rgba(0, 0, 255, 0.8);
+            }
+            100% {
+                text-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(0, 0, 255, 0.8);
+            }
+        }
+
+        .title h1 {
+            text-align: center;
+            padding: 0px 0;
+            background-color: #000;
+            color: white;
+            animation: pulse 1.5s infinite;
+			font-size: 5em; /* Increased text size */
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-image: url('https://github.com/NSC9/ai2c.github.io/blob/main/Images/alien_background_math_graph.jpg?raw=true');
+            background-size: 20%; /* Scales down the image to 20% of its original size */
+            background-repeat: repeat; /* Makes the image repeat in both directions */
+            background-position: top left; /* Starts the image at the top-left corner */
         }
         .container {
             max-width: 1200px;
@@ -19,18 +42,14 @@
         .title {
             text-align: center;
             padding: 20px 0;
-            background-color: #333;
+            background-color: #000;
             color: white;
-        }
-        .title h1 {
-            font-size: 3em;
-            margin: 0;
         }
         .bio-section {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #fff;
+            background-color: #000;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,12 +60,12 @@
         .bio-text h1 {
             margin: 0;
             font-size: 2em;
-            color: #333;
+            color: #fff;
         }
         .bio-text p {
             font-size: 1.2em;
             line-height: 1.5;
-            color: #666;
+            color: #fff;
         }
         .portrait img {
             border-radius: 50%;
@@ -73,19 +92,20 @@
         }
         .published-papers {
             margin-top: 40px;
-            background-color: #fff;
+            background-color: #000;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .published-papers h2 {
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 15px;
-            color: #333;
+            color: #fff;
         }
         .published-papers ul {
             list-style-type: none;
             padding: 0;
+			font-size: 1.2em;
         }
         .published-papers ul li {
             margin-bottom: 10px;
