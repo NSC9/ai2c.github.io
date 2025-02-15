@@ -25,14 +25,38 @@
             animation: pulse 1.5s infinite;
 			font-size: 5em; /* Increased text size */
         }
+        @keyframes shiftBackground {
+            0% {
+                background-position: top left;
+            }
+            100% {
+                background-position: top right; /* Moves the background horizontally */
+            }
+        }
+
+        @keyframes rippleEffect {
+            0% {
+                background-size: 6%;
+            }
+            50% {
+                background-size: 50%; /* Makes the ripple appear larger */
+            }
+            100% {
+                background-size: 100%; /* Resets to original size */
+            }
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-image: url('https://github.com/NSC9/ai2c.github.io/blob/main/Images/alien_background_math_graph.jpg?raw=true');
-            background-size: 20%; /* Scales down the image to 20% of its original size */
             background-repeat: repeat; /* Makes the image repeat in both directions */
             background-position: top left; /* Starts the image at the top-left corner */
+            background-size: 100%; /* Scales the image initially */
+            animation: shiftBackground 30s infinite alternate linear, rippleEffect 30s infinite alternate ease-in-out; /* Reverses after each cycle */
+
+
         }
         .container {
             max-width: 1200px;
@@ -55,7 +79,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .bio-text {
-            max-width: 600px;
+            max-width: 800px;
         }
         .bio-text h1 {
             margin: 0;
