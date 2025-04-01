@@ -45,6 +45,16 @@
                 background-size: 100%; /* Resets to original size */
             }
         }
+		@media (max-width: 768px) {
+			.about-section {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.about-text {
+				width: 100%;
+			}
+		}
 
         body {
             font-family: Arial, sans-serif;
@@ -79,6 +89,7 @@
 			padding: 20px;
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 			margin-bottom: 40px; /* Adds space below */
+			gap: 10px; /* Adjust the gap as needed */
 		}
 		.about-text {
 			display: flex;
@@ -105,6 +116,7 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 			margin-bottom: 40px; /* Adds space below */
+			gap: 10px; /* Adjust the gap as needed */
         }
 		.bio-text {
 			width: 100%; /* Allow the bio text to take up the full width of the container */
