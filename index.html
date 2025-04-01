@@ -54,14 +54,15 @@
             background-repeat: repeat; /* Makes the image repeat in both directions */
             background-position: top left; /* Starts the image at the top-left corner */
             background-size: 100%; /* Scales the image initially */
-            animation: shiftBackground 30s infinite alternate linear, rippleEffect 30s infinite alternate ease-in-out; /* Reverses after each cycle */
+            animation: shiftBackground 60s infinite alternate linear, rippleEffect 60s infinite alternate ease-in-out; /* Reverses after each cycle */
 
 
         }
         .container {
-            max-width: 1200px;
+            max-width: 1700px;
             margin: 0 auto;
             padding: 20px;
+		
         }
         .title {
             text-align: center;
@@ -69,25 +70,54 @@
             background-color: #000;
             color: white;
         }
+		.about-section {
+			display: flex;
+			align-items: flex-start; /* Align items at the top */
+			justify-content: space-between;
+			background-color: #000;
+			border-radius: 8px;
+			padding: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			margin-bottom: 40px; /* Adds space below */
+		}
+		.about-text {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start; /* Ensures the text starts at the top */
+		}
+        .about-text h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #fff;
+        }
+        .about-text p {
+            font-size: 1.4em;
+            line-height: 1.5;
+            color: #fff;
+        }
+		
         .bio-section {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Align items at the top */
             justify-content: space-between;
             background-color: #000;
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			margin-bottom: 40px; /* Adds space below */
         }
-        .bio-text {
-            max-width: 800px;
-        }
+		.bio-text {
+			width: 100%; /* Allow the bio text to take up the full width of the container */
+			max-width: none; /* Remove the max-width restriction */
+		}
+
         .bio-text h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 3em;
             color: #fff;
         }
         .bio-text p {
-            font-size: 1.2em;
+            font-size: 1.4em;
             line-height: 1.5;
             color: #fff;
         }
@@ -96,6 +126,21 @@
             max-width: 300px;
             height: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+		.portrait2 {
+			display: flex; /* Make the container a flex container */
+			justify-content: center; /* Horizontally center the image */
+			align-items: center; /* Vertically center the image */
+			height: 500px; /* Set a height for the container */
+		}
+        .portrait2 img {
+            border-radius: 20%;
+            max-width: 300px;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			width: 300px; /* Set a fixed width */
+			height: 500px; /* Set a fixed height */
+			overflow: hidden;
         }
         .social-links {
             margin-top: 20px;
@@ -114,22 +159,34 @@
         .social-links a:hover {
             background-color: #005bb5;
         }
-        .published-papers {
-            margin-top: 40px;
-            background-color: #000;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+		.published-papers {
+			margin-top: 40px;
+			background-color: #000;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			display: flex; /* Ensure it's a flex container */
+			flex-direction: column; /* Stack items vertically */
+			align-items: flex-start; /* Align items to the start of the flex container */
+			justify-content: flex-start; /* Force content to start at the top */
+			height: 100%; /* Ensure it takes full height of the parent */
+		}
+
+		.published-papers h2,
+		.published-papers ul {
+			margin-top: 0; /* Remove any top margin that might be pushing content down */
+			padding-top: 0; /* Ensure no unwanted padding */
+		}
+
         .published-papers h2 {
-            font-size: 2em;
+            font-size: 3em;
             margin-bottom: 15px;
             color: #fff;
         }
         .published-papers ul {
             list-style-type: none;
             padding: 0;
-			font-size: 1.2em;
+			font-size: 1.4em;
         }
         .published-papers ul li {
             margin-bottom: 10px;
@@ -141,6 +198,14 @@
         .published-papers ul li a:hover {
             text-decoration: underline;
         }
+        #rotatingImage {
+            transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
+            opacity: 1;
+        }
+        #rotatingImage2 {
+            transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
+            opacity: 1;
+        }
         @media (max-width: 768px) {
             .bio-section {
                 flex-direction: column;
@@ -149,6 +214,7 @@
             .bio-text, .portrait {
                 max-width: 100%;
             }
+
         }
     </style>
 </head>
@@ -160,19 +226,73 @@
     </div>
 
     <div class="container">
+        <section class="about-section">
+            <div class="about-text">
+                <h1>About</h1>
+                <p>The AI2C is a new model for higher learning by better gauging academic value with Monero cryptocurrency donation analyses rather than the legacy university system's outdated citation-count/page-rank structure. This new academic model is achieved by assigning each published paper with a unique receiving address and a respective public address so others can audit the value of each paper or contribute to its voting. This school is premised on the idea that all labor can and will be fully automated, that scientists can imbue matter with life, and that one's mind can be transferred to another body to prolong their lifespan. <br><br>We explore individualism, collectivism, neo-solipsistic one-mindism, and how these philosophies change and affect political societies of the future. Initially, our school sought to fully automate the United States intelligence community by studying how to generate Presidential Daily Briefs without involving biological labor. We have written papers exploring the potential to assign civil rights to artificial humans, exploring the consequences of mind transference, and exploring the augmentation of human ability and intellect with artificial intelligence and robotics. We are a non-profit GNU-compliant organization and a RISC-V advocate. There is no tuition. We hope to inspire and nurture curiosity and instill meaningful change into the world with the educational resources we provide. </p>
+            </div>
+			<div class="portrait2">
+				<img id="rotatingImage" src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c2.jpg" 
+					 alt="Portrait of AI2C">
+			</div>
+
+			<script>
+				const images = [
+					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c2.jpg",
+					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c.png",
+					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c3.jpg"
+				];
+
+				let currentIndex = 0;
+				const imgElement = document.getElementById("rotatingImage");
+
+				setInterval(() => {
+					imgElement.style.opacity = 0; // Start fade out
+					setTimeout(() => {
+						currentIndex = (currentIndex + 1) % images.length; // Switch image
+						imgElement.src = images[currentIndex];
+						imgElement.style.opacity = 1; // Fade in
+					}, 1500); // Matches the CSS transition duration
+				}, 7000); // Change every 5 seconds
+			</script>		
+        </section>
+	
         <section class="bio-section">
             <div class="bio-text">
                 <h1>Faculty</h1>
-                <p>Professor Nicholas S. Caudill is more than a scholar—he is an architect of tomorrow. A graduate in Intelligence and current Juris Doctorate candidate, he founded the Automated Intelligence Community College (AI2C) to thwart legal and ethical divides between biological and artificial organisms. His mission: to dismantle barriers between organic and synthetic life, to automate labor into obsolescence, and to codify civil and political rights for artificial humans. His work—cognitive transference protocols, machine autonomy architectures, and neo-solipsist governance models—is less theory than blueprint, designed to ensure humanity thrives in a world of algorithms and autonomy. The divide between the biological and the artificial is a relic. Under Professor Caudill’s leadership, a novel operating system for the next generation of humanity will be found.</p>
+                <p>Professor Nicholas S. Caudill is more than a scholar—he is an architect of tomorrow. A graduate in Intelligence and current Juris Doctorate candidate, he founded the AI2C to thwart legal and ethical divides between biological and artificial organisms. His mission: to dismantle barriers between organic and synthetic life, to automate labor into obsolescence, and to codify civil and political rights for artificial humans. His work—cognitive transference protocols, machine autonomy architectures, and neo-solipsist governance models—is less theory than blueprint, designed to ensure humanity thrives in a world of algorithms and autonomy. The divide between the biological and the artificial is a relic. Under Professor Caudill’s leadership, a novel operating system for the next generation of humanity will be found.<br><br><br></p>
                 <div class="social-links">
                     <a href="https://youtube.com/@ai2c" target="_blank">YouTube</a>
                     <a href="https://x.com/AI2C__" target="_blank">X (Twitter)</a>
                     <a href="https://github.com/NSC9/Sample_of_Work" target="_blank">GitHub</a>
                 </div>
             </div>
-            <div class="portrait">
-                <img src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png" alt="Portrait of Professor Nicholas S. Caudill">
-            </div>
+			
+			<div class="portrait">
+				<img id="rotatingImage2" src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png" 
+					 alt="Portrait of Professor Nicholas S. Caudill">
+			</div>
+
+			<script>
+				const images2 = [
+					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png",
+					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4598.jpg",
+					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4603.jpg"
+				];
+
+				let currentIndex2 = 0;
+				const imgElement2 = document.getElementById("rotatingImage2");
+
+				setInterval(() => {
+					imgElement2.style.opacity = 0; // Start fade out
+					setTimeout(() => {
+						currentIndex2 = (currentIndex2 + 1) % images2.length; // Switch image
+						imgElement2.src = images2[currentIndex2];
+						imgElement2.style.opacity = 1; // Fade in
+					}, 1500); // Matches the CSS transition duration
+				}, 7000); // Change every 6 seconds
+			</script>
+	
         </section>
 
         <!-- Published Papers Section -->
