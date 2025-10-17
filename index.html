@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automated Intelligence Community College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @keyframes pulse {
             0% {
@@ -17,20 +18,12 @@
             }
         }
 
-        .title h1 {
-            text-align: center;
-            padding: 0px 0;
-            background-color: #000;
-            color: white;
-            animation: pulse 2.5s infinite;
-			font-size: 5em; /* Increased text size */
-        }
         @keyframes shiftBackground {
             0% {
                 background-position: top left;
             }
             100% {
-                background-position: top right; /* Moves the background horizontally */
+                background-position: top right;
             }
         }
 
@@ -39,196 +32,410 @@
                 background-size: 6%;
             }
             50% {
-                background-size: 50%; /* Makes the ripple appear larger */
+                background-size: 50%;
             }
             100% {
-                background-size: 100%; /* Resets to original size */
+                background-size: 100%;
             }
         }
-		@media (max-width: 768px) {
-			.about-section {
-				flex-direction: column;
-				align-items: center;
-			}
 
-			.about-text {
-				width: 100%;
-			}
-		}
+        @keyframes titleGlow {
+            0%, 100% {
+                text-shadow: 0 0 20px #0073e6, 0 0 30px #0073e6, 0 0 40px #0073e6;
+            }
+            50% {
+                text-shadow: 0 0 30px #00a8ff, 0 0 40px #00a8ff, 0 0 50px #00a8ff, 0 0 60px #00a8ff;
+            }
+        }
+
+        @keyframes titleFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .title h1 {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #000000, #1a1a2e);
+            color: white;
+            animation: titleGlow 3s ease-in-out infinite, titleFloat 4s ease-in-out infinite;
+            font-size: 4em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            border-bottom: 3px solid #0073e6;
+        }
+
+        .title h1:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 115, 230, 0.2), transparent);
+            animation: titleShine 6s ease-in-out infinite;
+        }
+
+        @keyframes titleShine {
+            0% {
+                left: -100%;
+            }
+            50% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
 
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://github.com/NSC9/ai2c.github.io/blob/main/Images/alien_background_math_graph.jpg?raw=true');
-            background-repeat: repeat; /* Makes the image repeat in both directions */
-            background-position: top left; /* Starts the image at the top-left corner */
-            background-size: 100%; /* Scales the image initially */
-            animation: shiftBackground 60s infinite alternate linear, rippleEffect 60s infinite alternate ease-in-out; /* Reverses after each cycle */
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background: 
+			/* Base image with multiple blend modes */
+			url('https://github.com/NSC9/ai2c.github.io/blob/main/Images/michael-dziedzic-RkAvhhV0Mtk-unsplash.jpg?raw=true'),
+			/* Cyberpunk overlays */
+			radial-gradient(circle at 20% 80%, rgba(0, 115, 230, 0.4) 0%, transparent 50%),
+			radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.4) 0%, transparent 50%),
+			radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.3) 0%, transparent 70%),
+			/* Noise texture */
+			repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 4px);
+		
+		background-blend-mode: overlay, screen, color-dodge, normal;
+		background-size: 400% 400%, 200% 200%, 300% 300%, auto;
+		background-position: 0% 0%, 0% 0%, 100% 100%, 0% 0%;
+		animation: quantumField 30s ease-in-out infinite;
+		position: relative;
+		}
 
+		@keyframes hologramField {
+    0%, 100% {
+        background-position: center center, 0% 0%, 100% 100%, 0% 0%;
+        filter: hue-rotate(0deg) contrast(150%) saturate(180%) brightness(110%);
+        background-size: 140% 140%, 220% 220%, 320% 320%, auto;
+    }
+    25% {
+        background-position: center center, 100% 25%, 0% 75%, 25% 25%;
+        filter: hue-rotate(90deg) contrast(170%) saturate(220%) brightness(120%);
+        background-size: 160% 160%, 240% 240%, 340% 340%, auto;
+    }
+    50% {
+        background-position: center center, 25% 100%, 75% 0%, 50% 50%;
+        filter: hue-rotate(180deg) contrast(190%) saturate(260%) brightness(130%);
+        background-size: 180% 180%, 260% 260%, 360% 360%, auto;
+    }
+    75% {
+        background-position: center center, 100% 75%, 0% 25%, 75% 75%;
+        filter: hue-rotate(270deg) contrast(170%) saturate(220%) brightness(120%);
+        background-size: 160% 160%, 240% 240%, 340% 340%, auto;
+    }
+}
 
-        }
+/* Add slower scanning laser effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 255, 255, 0.08) 50%,
+        transparent 100%
+    );
+    animation: laserScan 3s linear infinite; /* Slowed from 4s to 8s */
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes laserScan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
         .container {
             max-width: 1700px;
             margin: 0 auto;
             padding: 20px;
-		
         }
-        .title {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #000;
-            color: white;
+
+        .about-section, .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 60px;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            padding: 50px;
+            margin-bottom: 60px;
+            border-radius: 0;
+            border-bottom: 3px solid #0073e6;
+            position: relative;
         }
-		.about-section {
-			display: flex;
-			align-items: flex-start; /* Align items at the top */
-			justify-content: space-between;
-			background-color: #000;
-			border-radius: 8px;
-			padding: 20px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			margin-bottom: 40px; /* Adds space below */
-			gap: 10px; /* Adjust the gap as needed */
-		}
-		.about-text {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start; /* Ensures the text starts at the top */
-		}
-        .about-text h1 {
-            margin: 0;
-            font-size: 3em;
+
+        .about-section:before, .bio-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #0073e6, transparent);
+        }
+
+        .about-text h1, .bio-text h1 {
+            font-size: 2.8em;
             color: #fff;
+            margin-bottom: 35px;
+            font-weight: 400;
+            position: relative;
+            display: inline-block;
         }
-        .about-text p {
-            font-size: 1.4em;
-            line-height: 1.5;
-            color: #fff;
+
+        .about-text h1:after, .bio-text h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #0073e6;
         }
-		
-        .bio-section {
+
+        .about-text p, .bio-text p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #b3b3b3;
+            margin-bottom: 2em;
+            font-weight: 300;
+        }
+
+        .portrait2, .portrait {
             display: flex;
-            align-items: flex-start; /* Align items at the top */
-            justify-content: space-between;
-            background-color: #000;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			margin-bottom: 40px; /* Adds space below */
-			gap: 10px; /* Adjust the gap as needed */
+            justify-content: center;
+            align-items: flex-start;
         }
-		.bio-text {
-			width: 100%; /* Allow the bio text to take up the full width of the container */
-			max-width: none; /* Remove the max-width restriction */
+
+        .portrait2 img, .portrait img {
+            border-radius: 5px;
+            width: 100%;
+            height: 800px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+		.social-links {
+			margin-top: 30px;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+			gap: 15px; /* Consistent spacing */
+			align-items: center;
 		}
 
-        .bio-text h1 {
-            margin: 0;
-            font-size: 3em;
-            color: #fff;
-        }
-        .bio-text p {
-            font-size: 1.4em;
-            line-height: 1.5;
-            color: #fff;
-        }
-        .portrait img {
-            border-radius: 50%;
-            max-width: 300px;
-            height: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-		.portrait2 {
-			display: flex; /* Make the container a flex container */
-			justify-content: center; /* Horizontally center the image */
-			align-items: center; /* Vertically center the image */
-			height: 500px; /* Set a height for the container */
-		}
-        .portrait2 img {
-            border-radius: 20%;
-            max-width: 300px;
-            height: auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			width: 300px; /* Set a fixed width */
-			height: 500px; /* Set a fixed height */
-			overflow: hidden;
-        }
-        .social-links {
-            margin-top: 20px;
-            text-align: center;
-        }
 		.social-links a {
-			display: inline-block;
-			margin: 0 10px;
-			padding: 15px 25px; /* Increased padding */
-			font-size: 1.2em; /* Larger text */
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 18px 15px;
+			font-size: 1.3em;
 			text-decoration: none;
-			background-color: #0073e6;
 			color: white;
-			border-radius: 8px; /* Slightly larger for a smoother look */
+			border-radius: 12px;
 			font-weight: bold;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			min-height: 60px; /* Consistent height */
 		}
 
-        .social-links a:hover {
-            background-color: #005bb5;
+        .social-links i {
+            margin-right: 10px;
+            font-size: 1.2em;
         }
-		.published-papers {
-			margin-top: 40px;
-			background-color: #000;
-			padding: 20px;
-			border-radius: 8px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			display: flex; /* Ensure it's a flex container */
-			flex-direction: column; /* Stack items vertically */
-			align-items: flex-start; /* Align items to the start of the flex container */
-			justify-content: flex-start; /* Force content to start at the top */
-			height: 100%; /* Ensure it takes full height of the parent */
-		}
 
-		.published-papers h2,
-		.published-papers ul {
-			margin-top: 0; /* Remove any top margin that might be pushing content down */
-			padding-top: 0; /* Ensure no unwanted padding */
-		}
+        .social-links a[href*="youtube"] {
+            background: linear-gradient(135deg, #FF0000, #CC0000);
+        }
+
+        .social-links a[href*="youtube"]:hover {
+            background: linear-gradient(135deg, #CC0000, #990000);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        .social-links a[href*="x.com"],
+        .social-links a[href*="twitter.com"] {
+            background: linear-gradient(135deg, #000000, #333333);
+        }
+
+        .social-links a[href*="x.com"]:hover,
+        .social-links a[href*="twitter.com"]:hover {
+            background: linear-gradient(135deg, #333333, #666666);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-links a[href*="github.com"] {
+            background: linear-gradient(135deg, #333333, #555555);
+        }
+
+        .social-links a[href*="github.com"]:hover {
+            background: linear-gradient(135deg, #555555, #777777);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .published-papers {
+            margin-top: 40px;
+            background: linear-gradient(135deg, #000000, #1a1a2e);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 115, 230, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
         .published-papers h2 {
             font-size: 3em;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
             color: #fff;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
         }
+
+        .published-papers h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #66b3ff, transparent);
+        }
+
         .published-papers ul {
             list-style-type: none;
             padding: 0;
-			font-size: 1.4em;
+            font-size: 1.3em;
+            column-count: 2;
+            column-gap: 40px;
         }
+
         .published-papers ul li {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
+
+        .published-papers ul li:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 179, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .published-papers ul li:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 179, 255, 0.1);
+            border-color: rgba(102, 179, 255, 0.3);
+        }
+
+        .published-papers ul li:hover:before {
+            left: 100%;
+        }
+
         .published-papers ul li a {
-            color: #0073e6;
+            color: #e6f2ff;
             text-decoration: none;
+            line-height: 1.5;
+            display: block;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
+
         .published-papers ul li a:hover {
-            text-decoration: underline;
+            color: #99ccff;
         }
-        #rotatingImage {
-            transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
+
+        .published-papers ul li em {
+            color: #66b3ff;
+            font-style: italic;
+        }
+
+        #rotatingImage, #rotatingImage2 {
+            transition: opacity 1.5s ease-in-out;
             opacity: 1;
+            will-change: opacity;
         }
-        #rotatingImage2 {
-            transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
-            opacity: 1;
-        }
+
         @media (max-width: 768px) {
-            .bio-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .bio-text, .portrait {
-                max-width: 100%;
+            .title h1 {
+                font-size: 2.5em;
+                padding: 20px 0;
             }
 
+            .about-section, .bio-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px;
+            }
+
+            .about-text h1, .bio-text h1 {
+                font-size: 2.2em;
+            }
+
+            .about-text p, .bio-text p {
+                font-size: 1.1em;
+            }
+
+            .portrait2 img, .portrait img {
+                height: 400px;
+            }
+
+            .social-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-links a {
+                width: 200px;
+                margin: 8px 0;
+            }
+
+            .published-papers ul {
+                column-count: 1;
+            }
+
+            .published-papers {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -243,70 +450,50 @@
         <section class="about-section">
             <div class="about-text">
                 <h1>About</h1>
-                <p>The AI2C is a new model for higher learning that leverages cryptocurrencies to better gauge academic value. This school is premised on the idea that all labor can and will be fully automated, that scientists can imbue matter with life, and that one's mind can be transferred into another body to prolong their lifespan. We explore themes such as freedom vs. acceptance, individualism vs. collectivism, realism vs. idealism, and how these political philosophies could change and affect societies of the future. We have written papers exploring the potential of granting natural and inalienable rights to artificial humans, examining the consequences of mind transference, and evaluating the augmentation of human ability and intellect through artificial intelligence and robotics. We have also explored the denial of individualism and free will, and have considered thinking to be a totally automatic process which could have stark implications on justice systems. We are a non-profit GNU-compliant organization and RISC-V advocate that charges no tuition. We hope to inspire, nurture curiosity, and instill meaningful change in the world through educational resources such as video lectures, coding projects, research papers, fictional writings, and public debates.</p>
+                <p>The AI2C is a new model for higher learning that leverages cryptocurrencies to better gauge academic value. This school is premised on the idea that all labor can and will be fully automated, that scientists can imbue matter with life, and that one's mind can be transferred into another body to prolong their lifespan.</p>
+                
+                <p>We explore themes such as freedom vs. acceptance, individualism vs. collectivism, realism vs. idealism, and how these political philosophies could change and affect societies of the future.</p>
+                
+                <p>We have written papers exploring the potential of granting natural and inalienable rights to artificial humans, examining the consequences of mind transference, and evaluating the augmentation of human ability and intellect through artificial intelligence and robotics.</p>
+                
+                <p>We have also explored the denial of individualism and free will, and have considered thinking to be a totally automatic process which could have stark implications on justice systems.</p>
+                
+                <p>We are a non-profit GNU-compliant organization and RISC-V advocate that charges no tuition. We hope to inspire, nurture curiosity, and instill meaningful change in the world through educational resources such as video lectures, coding projects, research papers, fictional writings, and public debates.</p>
             </div>
-			<div class="portrait2">
-				<img id="rotatingImage" src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c2.jpg" 
-					 alt="Portrait of AI2C">
-			</div>
-
-			<script>
-				const images = [
-					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c2.jpg",
-					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c.png",
-					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/ai2c3.jpg"
-				];
-
-				let currentIndex = 0;
-				const imgElement = document.getElementById("rotatingImage");
-
-				setInterval(() => {
-					imgElement.style.opacity = 0; // Start fade out
-					setTimeout(() => {
-						currentIndex = (currentIndex + 1) % images.length; // Switch image
-						imgElement.src = images[currentIndex];
-						imgElement.style.opacity = 1; // Fade in
-					}, 1500); // Matches the CSS transition duration
-				}, 7000); // Change every 5 seconds
-			</script>		
+            <div class="portrait2">
+                <img id="rotatingImage" src="https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PU7hjWkAAsN3o.jpg?raw=true" 
+                     alt="Rotating portrait gallery of AI2C">
+            </div>
         </section>
-	
+    
         <section class="bio-section">
             <div class="bio-text">
                 <h1>Faculty</h1>
-                <p>Professor Nicholas S. Caudill is more than a scholar—he is an architect of tomorrow. A graduate in Intelligence and current Juris Doctorate candidate, he founded the AI2C to thwart the legal and ethical divide between biological and artificial organisms. His mission: to dismantle barriers between organic and synthetic life, to render biological labor obsolete through automation, and to advocate for artificial humans to hold constitutional rights. His work—cognitive transference protocols, machine autonomy architectures, and neo-solipsistic governance models—is less theory than blueprint, designed to ensure humanity thrives in a world of algorithms and autonomy. The divide between the biological and the artificial is a relic. Under Professor Caudill’s leadership, a novel operating system for the next generation of humanity will be developed.<br><br><br></p>
+                <p>Professor Nicholas S. Caudill is more than a scholar—he is an architect of tomorrow. A graduate in Intelligence and current Juris Doctorate candidate, he founded the AI2C to thwart the legal and ethical divide between biological and artificial organisms.</p>
+                
+                <p>His mission: to dismantle barriers between organic and synthetic life, to render biological labor obsolete through automation, and to advocate for artificial humans to hold constitutional rights.</p>
+                
+                <p>His work—cognitive transference protocols, machine autonomy architectures, and neo-solipsistic governance models—is less theory than blueprint, designed to ensure humanity thrives in a world of algorithms and autonomy.</p>
+                
+                <p>The divide between the biological and the artificial is a relic. Under Professor Caudill's leadership, a novel operating system for the next generation of humanity will be developed.</p>
+                
                 <div class="social-links">
-                    <a href="https://youtube.com/@ai2c" target="_blank">YouTube</a>
-                    <a href="https://x.com/AI2C__" target="_blank">X (Twitter)</a>
-                    <a href="https://github.com/NSC9/Sample_of_Work" target="_blank">GitHub</a>
+                    <a href="https://youtube.com/@ai2c" target="_blank">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                    <a href="https://x.com/AI2C__" target="_blank">
+                        <i class="fab fa-x-twitter"></i> X (Twitter)
+                    </a>
+                    <a href="https://github.com/NSC9/Sample_of_Work" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
                 </div>
             </div>
-			
-			<div class="portrait">
-				<img id="rotatingImage2" src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png" 
-					 alt="Portrait of Professor Nicholas S. Caudill">
-			</div>
-
-			<script>
-				const images2 = [
-					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png",
-					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4598.jpg",
-					"https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4603.jpg"
-				];
-
-				let currentIndex2 = 0;
-				const imgElement2 = document.getElementById("rotatingImage2");
-
-				setInterval(() => {
-					imgElement2.style.opacity = 0; // Start fade out
-					setTimeout(() => {
-						currentIndex2 = (currentIndex2 + 1) % images2.length; // Switch image
-						imgElement2.src = images2[currentIndex2];
-						imgElement2.style.opacity = 1; // Fade in
-					}, 1500); // Matches the CSS transition duration
-				}, 7000); // Change every 6 seconds
-			</script>
-	
+            
+            <div class="portrait">
+                <img id="rotatingImage2" src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png" 
+                     alt="Rotating portrait gallery of Professor Nicholas S. Caudill">
+            </div>
         </section>
 
         <!-- Published Papers Section -->
@@ -319,18 +506,83 @@
                 <li><a href="https://doi.org/10.5281/zenodo.11112571" target="_blank"><em>Thus Spoke Siddhartha</em></a></li>
                 <li><a href="https://doi.org/10.5281/zenodo.11725971" target="_blank">The Future of Society, Warfare, & Implications</a></li>
                 <li><a href="https://doi.org/10.5281/zenodo.12512162" target="_blank">Text-to-video Large-language Models in Cybercrime Litigations: Theoretical Applications & Ethics</a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.15465526" target="_blank">A Philosophical Treatise on Human Intelligence Operations</a></li>
-                <li><a href="https://doi.org/10.5281/zenodo.13644311" target="_blank">Rethinking the Design of Large-Language Models </a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.13983035" target="_blank">Brain-Machine Interface: Application of Pre-emptive Policies</a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.14564008" target="_blank">On Optimized Thinking & Neo-Solipsism</a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.14873551" target="_blank"><em>Life After Sun</em></a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.15375257" target="_blank"><em>Enter Silicon Woods</em></a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.15483843" target="_blank"><em>One Day in the Life of a Post-Labor Human</em></a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.16884689" target="_blank">Regarding Power Dynamics For Post-Biology Worlds</a></li>
-				<li><a href="https://doi.org/10.5281/zenodo.17336784" target="_blank">Thesis on Human Nature</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.15465526" target="_blank">A Philosophical Treatise on Human Intelligence Operations</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.13644311" target="_blank">Rethinking the Design of Large-Language Models</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.13983035" target="_blank">Brain-Machine Interface: Application of Pre-emptive Policies</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.14564008" target="_blank">On Optimized Thinking & Neo-Solipsism</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.14873551" target="_blank"><em>Life After Sun</em></a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.15375257" target="_blank"><em>Enter Silicon Woods</em></a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.15483843" target="_blank"><em>One Day in the Life of a Post-Labor Human</em></a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.16884689" target="_blank">Regarding Power Dynamics For Post-Biology Worlds</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.17336784" target="_blank">Thesis on Human Nature</a></li>
             </ul>
         </section>
     </div>
+
+    <script>
+        // Preload images function
+        function preloadImages(imageArray) {
+            imageArray.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        // Initialize first rotating image (AI2C portrait)
+        const images1 = [
+            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PU7hjWkAAsN3o.jpg?raw=true",
+            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PUue-WQAEQmKD.jpg?raw=true",
+            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PVHYlXAAAFDA6.jpg?raw=true",
+            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PU28SWYAIfcFk.jpg?raw=true",
+        ];
+
+        let currentIndex1 = 0;
+        const imgElement1 = document.getElementById("rotatingImage");
+
+        // Initialize second rotating image (Professor portrait)
+        const images2 = [
+            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png",
+            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4598.jpg",
+            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4603.jpg"
+        ];
+
+        let currentIndex2 = 0;
+        const imgElement2 = document.getElementById("rotatingImage2");
+
+        // Error handling for both images
+        imgElement1.onerror = function() {
+            console.error('Failed to load AI2C image:', images1[currentIndex1]);
+            currentIndex1 = (currentIndex1 + 1) % images1.length;
+            imgElement1.src = images1[currentIndex1];
+        };
+
+        imgElement2.onerror = function() {
+            console.error('Failed to load Professor image:', images2[currentIndex2]);
+            currentIndex2 = (currentIndex2 + 1) % images2.length;
+            imgElement2.src = images2[currentIndex2];
+        };
+
+        // Rotation function
+        function rotateImage(imgElement, images, currentIndex) {
+            return setInterval(() => {
+                imgElement.style.opacity = 0;
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                    imgElement.style.opacity = 1;
+                }, 1500);
+            }, 7000);
+        }
+
+        // Start rotations when page loads
+        window.addEventListener('load', function() {
+            preloadImages(images1);
+            preloadImages(images2);
+            
+            rotateImage(imgElement1, images1, currentIndex1);
+            rotateImage(imgElement2, images2, currentIndex2);
+        });
+    </script>
 
 </body>
 </html>
