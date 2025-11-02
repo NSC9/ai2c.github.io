@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty - Automated Intelligence Community College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI2C</a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="faculty.html" class="active">Faculty</a>
+                <a href="publications.html">Publications</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Title -->
+    <div class="title">
+        <h1>Faculty</h1>
+    </div>
+
+    <div class="container">
+        <section class="bio-section">
+            <div class="bio-text">
+                <h1>Professor Nicholas S. Caudill</h1>
+                
+                <p>Professor Nicholas S. Caudill is more than a scholar—he is an architect of tomorrow. A graduate in Intelligence and current Juris Doctorate candidate, he founded the AI2C to thwart the legal and ethical divide between biological and artificial organisms.</p>
+                
+                <p>His mission: to dismantle barriers between organic and synthetic life, to render biological labor obsolete through automation, and to advocate for artificial humans to hold constitutional rights.</p>
+                
+                <h2>Academic Background</h2>
+                <ul>
+                    <li><strong>Juris Doctorate Candidate</strong> - Specializing in Technology Law and AI Ethics</li>
+                    <li><strong>Bachelor of Science in Intelligence</strong> - Focus on Emerging Technologies and Security</li>
+                    <li><strong>Research Fellow</strong> - Cognitive Architecture and Neural Interfaces</li>
+                    <li><strong>Visiting Lecturer</strong> - Multiple institutions on AI Policy and Future Studies</li>
+                </ul>
+            </div>
+            
+            <div class="portrait">
+                <img id="rotatingImage2" src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png" 
+                     alt="Rotating portrait gallery of Professor Nicholas S. Caudill">
+            </div>
+        </section>
+        
+        <!-- Research Focus Section - Full Width -->
+        <section class="full-width-section">
+            <h2>Research Focus</h2>
+            <div class="research-interests">
+                <div class="research-card">
+                    <h3>AI Rights & Legal Personhood</h3>
+                    <p>Developing legal frameworks for artificial consciousness and establishing constitutional protections for synthetic beings.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Mind Transference Protocols</h3>
+                    <p>Researching cognitive architecture and neural mapping for digital consciousness preservation and transfer.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Post-Labor Economics</h3>
+                    <p>Designing economic systems for societies where human labor is fully automated and obsolete.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Neo-Solipsistic Governance</h3>
+                    <p>Creating political models for worlds where individual consciousness can exist across multiple substrates.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Philosophical Approach Section - Full Width -->
+        <section class="full-width-section">
+            <h2>Philosophical Approach</h2>
+            <p>Professor Caudill's work—cognitive transference protocols, machine autonomy architectures, and neo-solipsistic governance models—is less theory than blueprint, designed to ensure humanity thrives in a world of algorithms and autonomy.</p>
+            
+            <p>He challenges conventional boundaries between philosophy, technology, and law, arguing that the divide between the biological and the artificial is a relic of 20th-century thinking. Under Professor Caudill's leadership, AI2C is developing a novel operating system for the next generation of humanity.</p>
+        </section>
+        
+        <!-- Educational Philosophy Section - Full Width -->
+        <section class="full-width-section">
+            <h2>Educational Philosophy</h2>
+            <p>Professor Caudill believes that education should be accessible, transformative, and forward-looking. His teaching methodology combines:</p>
+            <ul>
+                <li><strong>Interdisciplinary Synthesis</strong> - Merging insights from law, technology, philosophy, and ethics</li>
+                <li><strong>Practical Implementation</strong> - Moving beyond theory to create working models and prototypes</li>
+                <li><strong>Open Collaboration</strong> - Building communities of practice around shared challenges</li>
+                <li><strong>Future-Centric Thinking</strong> - Preparing students for worlds that don't yet exist</li>
+            </ul>
+        </section>
+        
+        <!-- Social Links Section - Full Width -->
+        <section class="full-width-section">
+            <div class="social-links">
+                <a href="https://youtube.com/@ai2c" target="_blank">
+                    <i class="fab fa-youtube"></i> YouTube
+                </a>
+                <a href="https://x.com/AI2C__" target="_blank">
+                    <i class="fab fa-x-twitter"></i> X (Twitter)
+                </a>
+                <a href="https://github.com/NSC9/Sample_of_Work" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Image Rotation for Professor Portrait
+        const images2 = [
+            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png",
+            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4598.jpg",
+            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4603.jpg"
+        ];
+
+        let currentIndex2 = 0;
+        const imgElement2 = document.getElementById("rotatingImage2");
+
+        // Preload images
+        function preloadImages(imageArray) {
+            imageArray.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        // Error handling
+        imgElement2.onerror = function() {
+            console.error('Failed to load Professor image:', images2[currentIndex2]);
+            currentIndex2 = (currentIndex2 + 1) % images2.length;
+            imgElement2.src = images2[currentIndex2];
+        };
+
+        // Rotation function
+        function rotateImage() {
+            setInterval(() => {
+                imgElement2.style.opacity = 0;
+                setTimeout(() => {
+                    currentIndex2 = (currentIndex2 + 1) % images2.length;
+                    imgElement2.src = images2[currentIndex2];
+                    imgElement2.style.opacity = 1;
+                }, 1500);
+            }, 7000);
+        }
+
+        // Start rotation when page loads
+        window.addEventListener('load', function() {
+            preloadImages(images2);
+            rotateImage();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -5,458 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automated Intelligence Community College</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-			html {
-			transform: scale(0.6); /* Scales entire page to 90% */
-			transform-origin: top center;
-			width: 100%;
-			height: 100%;
-		}
-		
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(0, 0, 255, 0.8);
-            }
-            50% {
-                text-shadow: 0 0 15px rgba(0, 0, 255, 1), 0 0 25px rgba(0, 0, 255, 0.8);
-            }
-            100% {
-                text-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(0, 0, 255, 0.8);
-            }
-        }
-
-        @keyframes shiftBackground {
-            0% {
-                background-position: top left;
-            }
-            100% {
-                background-position: top right;
-            }
-        }
-
-        @keyframes rippleEffect {
-            0% {
-                background-size: 6%;
-            }
-            50% {
-                background-size: 50%;
-            }
-            100% {
-                background-size: 100%;
-            }
-        }
-
-        @keyframes titleGlow {
-            0%, 100% {
-                text-shadow: 0 0 20px #0073e6, 0 0 30px #0073e6, 0 0 40px #0073e6;
-            }
-            50% {
-                text-shadow: 0 0 30px #00a8ff, 0 0 40px #00a8ff, 0 0 50px #00a8ff, 0 0 60px #00a8ff;
-            }
-        }
-
-        @keyframes titleFloat {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .title h1 {
-            text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #000000, #1a1a2e);
-            color: white;
-            animation: titleGlow 3s ease-in-out infinite, titleFloat 4s ease-in-out infinite;
-            font-size: 4em;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-            border-bottom: 3px solid #0073e6;
-        }
-
-        .title h1:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 115, 230, 0.2), transparent);
-            animation: titleShine 6s ease-in-out infinite;
-        }
-
-        @keyframes titleShine {
-            0% {
-                left: -100%;
-            }
-            50% {
-                left: 100%;
-            }
-            100% {
-                left: 100%;
-            }
-        }
-
-        body {
-		font-family: Arial, sans-serif;
-		margin: 0;
-		padding: 0;
-		background: 
-			/* Base image with multiple blend modes */
-			url('https://github.com/NSC9/ai2c.github.io/blob/main/Images/michael-dziedzic-RkAvhhV0Mtk-unsplash.jpg?raw=true'),
-			/* Cyberpunk overlays */
-			radial-gradient(circle at 20% 80%, rgba(0, 115, 230, 0.4) 0%, transparent 50%),
-			radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.4) 0%, transparent 50%),
-			radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.3) 0%, transparent 70%),
-			/* Noise texture */
-			repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 4px);
-		
-		background-blend-mode: overlay, screen, color-dodge, normal;
-		background-size: 400% 400%, 200% 200%, 300% 300%, auto;
-		background-position: 0% 0%, 0% 0%, 100% 100%, 0% 0%;
-		animation: quantumField 30s ease-in-out infinite;
-		position: relative;
-		}
-
-		@keyframes hologramField {
-    0%, 100% {
-        background-position: center center, 0% 0%, 100% 100%, 0% 0%;
-        filter: hue-rotate(0deg) contrast(150%) saturate(180%) brightness(110%);
-        background-size: 140% 140%, 220% 220%, 320% 320%, auto;
-    }
-    25% {
-        background-position: center center, 100% 25%, 0% 75%, 25% 25%;
-        filter: hue-rotate(90deg) contrast(170%) saturate(220%) brightness(120%);
-        background-size: 160% 160%, 240% 240%, 340% 340%, auto;
-    }
-    50% {
-        background-position: center center, 25% 100%, 75% 0%, 50% 50%;
-        filter: hue-rotate(180deg) contrast(190%) saturate(260%) brightness(130%);
-        background-size: 180% 180%, 260% 260%, 360% 360%, auto;
-    }
-    75% {
-        background-position: center center, 100% 75%, 0% 25%, 75% 75%;
-        filter: hue-rotate(270deg) contrast(170%) saturate(220%) brightness(120%);
-        background-size: 160% 160%, 240% 240%, 340% 340%, auto;
-    }
-}
-
-/* Add slower scanning laser effect */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(0, 255, 255, 0.08) 50%,
-        transparent 100%
-    );
-    animation: laserScan 3s linear infinite; /* Slowed from 4s to 8s */
-    pointer-events: none;
-    z-index: -1;
-}
-
-@keyframes laserScan {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-        .container {
-            max-width: 1700px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .about-section, .bio-section {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 60px;
-            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-            padding: 50px;
-            margin-bottom: 60px;
-            border-radius: 0;
-            border-bottom: 3px solid #0073e6;
-            position: relative;
-        }
-
-        .about-section:before, .bio-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #0073e6, transparent);
-        }
-
-        .about-text h1, .bio-text h1 {
-            font-size: 2.8em;
-            color: #fff;
-            margin-bottom: 35px;
-            font-weight: 400;
-            position: relative;
-            display: inline-block;
-        }
-
-        .about-text h1:after, .bio-text h1:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: #0073e6;
-        }
-
-        .about-text p, .bio-text p {
-            font-size: 1.3em;
-            line-height: 1.8;
-            color: #b3b3b3;
-            margin-bottom: 2em;
-            font-weight: 300;
-        }
-
-        .portrait2, .portrait {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .portrait2 img{
-            border-radius: 5px;
-            width: 100%;
-            height: 1200px;
-            object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        }
-		.portrait img {
-			border-radius: 5px;
-			width: 100%;
-			height: 1000px;
-			object-fit: cover;
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-		}
-		.social-links {
-			margin-top: 30px;
-			display: grid;
-			grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-			gap: 15px; /* Consistent spacing */
-			align-items: center;
-		}
-
-		.social-links a {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			padding: 18px 15px;
-			font-size: 1.3em;
-			text-decoration: none;
-			color: white;
-			border-radius: 12px;
-			font-weight: bold;
-			transition: all 0.3s ease;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-			text-align: center;
-			min-height: 60px; /* Consistent height */
-		}
-
-        .social-links i {
-            margin-right: 10px;
-            font-size: 1.2em;
-        }
-
-        .social-links a[href*="youtube"] {
-            background: linear-gradient(135deg, #FF0000, #CC0000);
-        }
-
-        .social-links a[href*="youtube"]:hover {
-            background: linear-gradient(135deg, #CC0000, #990000);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
-        }
-
-        .social-links a[href*="x.com"],
-        .social-links a[href*="twitter.com"] {
-            background: linear-gradient(135deg, #000000, #333333);
-        }
-
-        .social-links a[href*="x.com"]:hover,
-        .social-links a[href*="twitter.com"]:hover {
-            background: linear-gradient(135deg, #333333, #666666);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .social-links a[href*="github.com"] {
-            background: linear-gradient(135deg, #333333, #555555);
-        }
-
-        .social-links a[href*="github.com"]:hover {
-            background: linear-gradient(135deg, #555555, #777777);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .published-papers {
-            margin-top: 40px;
-            background: linear-gradient(135deg, #000000, #1a1a2e);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 115, 230, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .published-papers h2 {
-            font-size: 3em;
-            margin-bottom: 30px;
-            color: #fff;
-            text-align: center;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            position: relative;
-        }
-
-        .published-papers h2:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #66b3ff, transparent);
-        }
-
-        .published-papers ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 1.3em;
-            column-count: 2;
-            column-gap: 40px;
-        }
-
-        .published-papers ul li {
-            margin-bottom: 20px;
-            padding: 18px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .published-papers ul li:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102, 179, 255, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .published-papers ul li:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(102, 179, 255, 0.1);
-            border-color: rgba(102, 179, 255, 0.3);
-        }
-
-        .published-papers ul li:hover:before {
-            left: 100%;
-        }
-
-        .published-papers ul li a {
-            color: #e6f2ff;
-            text-decoration: none;
-            line-height: 1.5;
-            display: block;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-        }
-
-        .published-papers ul li a:hover {
-            color: #99ccff;
-        }
-
-        .published-papers ul li em {
-            color: #66b3ff;
-            font-style: italic;
-        }
-
-        #rotatingImage, #rotatingImage2 {
-            transition: opacity 1.5s ease-in-out;
-            opacity: 1;
-            will-change: opacity;
-        }
-
-        @media (max-width: 768px) {
-            html {
-                transform: scale(1);
-            }
-            .title h1 {
-                font-size: 2.5em;
-                padding: 20px 0;
-            }
-
-            .about-section, .bio-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 30px;
-            }
-
-            .about-text h1, .bio-text h1 {
-                font-size: 2.2em;
-            }
-
-            .about-text p, .bio-text p {
-                font-size: 1.1em;
-            }
-
-            .portrait2 img, .portrait img {
-                height: 400px;
-            }
-
-            .social-links {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .social-links a {
-                width: 200px;
-                margin: 8px 0;
-            }
-
-            .published-papers ul {
-                column-count: 1;
-            }
-
-            .published-papers {
-                padding: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI2C</a>
+            <div class="nav-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="faculty.html">Faculty</a>
+                <a href="publications.html">Publications</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <!-- Main Title Section -->
     <div class="title">
@@ -536,70 +106,47 @@ body::before {
         </section>
     </div>
 
+    <!-- External JavaScript Files -->
+    <script src="common.js"></script>
     <script>
-        // Preload images function
-        function preloadImages(imageArray) {
-            imageArray.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-        }
+        // Image rotation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize rotating images
+            const images1 = [
+                "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PU7hjWkAAsN3o.jpg?raw=true",
+                "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PUue-WQAEQmKD.jpg?raw=true",
+                "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PVHYlXAAAFDA6.jpg?raw=true",
+                "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PU28SWYAIfcFk.jpg?raw=true",
+            ];
 
-        // Initialize first rotating image (AI2C portrait)
-        const images1 = [
-            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PU7hjWkAAsN3o.jpg?raw=true",
-            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PUue-WQAEQmKD.jpg?raw=true",
-            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PVHYlXAAAFDA6.jpg?raw=true",
-            "https://github.com/NSC9/ai2c.github.io/blob/main/Images/G3PU28SWYAIfcFk.jpg?raw=true",
-        ];
+            const images2 = [
+                "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png",
+                "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4598.jpg",
+                "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4603.jpg"
+            ];
 
-        let currentIndex1 = 0;
-        const imgElement1 = document.getElementById("rotatingImage");
+            const imgElement1 = document.getElementById("rotatingImage");
+            const imgElement2 = document.getElementById("rotatingImage2");
 
-        // Initialize second rotating image (Professor portrait)
-        const images2 = [
-            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/supawork_image_1729178189767.png",
-            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4598.jpg",
-            "https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/Images/IMG_4603.jpg"
-        ];
+            let currentIndex1 = 0;
+            let currentIndex2 = 0;
 
-        let currentIndex2 = 0;
-        const imgElement2 = document.getElementById("rotatingImage2");
+            // Rotation function
+            function rotateImage(imgElement, images, currentIndex) {
+                return setInterval(() => {
+                    imgElement.style.opacity = 0;
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % images.length;
+                        imgElement.src = images[currentIndex];
+                        imgElement.style.opacity = 1;
+                    }, 1500);
+                }, 7000);
+            }
 
-        // Error handling for both images
-        imgElement1.onerror = function() {
-            console.error('Failed to load AI2C image:', images1[currentIndex1]);
-            currentIndex1 = (currentIndex1 + 1) % images1.length;
-            imgElement1.src = images1[currentIndex1];
-        };
-
-        imgElement2.onerror = function() {
-            console.error('Failed to load Professor image:', images2[currentIndex2]);
-            currentIndex2 = (currentIndex2 + 1) % images2.length;
-            imgElement2.src = images2[currentIndex2];
-        };
-
-        // Rotation function
-        function rotateImage(imgElement, images, currentIndex) {
-            return setInterval(() => {
-                imgElement.style.opacity = 0;
-                setTimeout(() => {
-                    currentIndex = (currentIndex + 1) % images.length;
-                    imgElement.src = images[currentIndex];
-                    imgElement.style.opacity = 1;
-                }, 1500);
-            }, 7000);
-        }
-
-        // Start rotations when page loads
-        window.addEventListener('load', function() {
-            preloadImages(images1);
-            preloadImages(images2);
-            
-            rotateImage(imgElement1, images1, currentIndex1);
-            rotateImage(imgElement2, images2, currentIndex2);
+            // Start image rotation
+            if (imgElement1) rotateImage(imgElement1, images1, currentIndex1);
+            if (imgElement2) rotateImage(imgElement2, images2, currentIndex2);
         });
     </script>
-
 </body>
 </html>
