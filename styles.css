@@ -542,3 +542,31 @@ body::before {
     width: 100%;
     object-fit: cover;
 }
+
+/* FIX ABOUT PAGE FULL WIDTH - Add to end of styles.css */
+.about-section:not(:has(.portrait2)) {
+    grid-template-columns: 1fr !important;
+    display: grid !important;
+}
+
+.about-section:not(:has(.portrait2)) .about-text {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+}
+
+/* Ensure all content spans full width on about page */
+.container .about-section:not(:has(.portrait2)) .about-text h1,
+.container .about-section:not(:has(.portrait2)) .about-text h2,
+.container .about-section:not(:has(.portrait2)) .about-text p,
+.container .about-section:not(:has(.portrait2)) .about-text ul,
+.container .about-section:not(:has(.portrait2)) .about-text .social-feeds {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Make sure headings are block level */
+.about-text h1, 
+.about-text h2 {
+    display: block !important;
+    width: 100% !important;
+}
