@@ -98,13 +98,31 @@ body::before {
 .about-text li:before, .bio-text li:before { display: none; }
 
 /* Portraits */
-.portrait2, .portrait { display: flex; justify-content: center; align-items: flex-start; }
-.portrait2 img, .portrait img {
-    width: 100%; object-fit: cover; border-radius: 5px; border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+.portrait2, .portrait { 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    overflow: hidden;
 }
-.portrait2 img { height: 1200px; }
-.portrait img { height: 1000px; }
+.portrait2 img, .portrait img {
+    width: 100%; 
+    object-fit: cover; 
+    border-radius: 5px; 
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    animation: panDown 8s linear infinite;
+}
+.portrait2 img { height: 200px;}
+.portrait img { height: 800px; }
+
+@keyframes panDown {
+    0% { 
+        object-position: top; 
+    }
+    100% { 
+        object-position: bottom; 
+    }
+}
 
 /* Social Links */
 .social-links { margin-top: 30px; display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; align-items: center; }
