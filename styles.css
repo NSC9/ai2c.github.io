@@ -10,24 +10,38 @@ html { transform: scale(0.6); transform-origin: top center; width: 100%; height:
 @keyframes laserScan { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
 @keyframes titleShine { 0% { left: -100%; } 50%,100% { left: 100%; } }
 @keyframes quantumField { 0% { background-position: 0% 0%, 0% 0%, 100% 100%, 0% 0%; } 100% { background-position: 100% 100%, 100% 100%, 0% 0%, 100% 100%; } }
+@keyframes bioDigitalPulse { 0%,100% { filter: hue-rotate(0deg) brightness(100%) contrast(110%); } 50% { filter: hue-rotate(5deg) brightness(110%) contrast(120%); } }
 
-/* Base Styles */
+/* Base Styles - UPDATED WITH BIO-DIGITAL BACKGROUND */
 body {
     font-family: Arial, sans-serif; margin: 0; padding: 0; position: relative;
-    background: url('https://github.com/NSC9/ai2c.github.io/blob/main/Images/michael-dziedzic-RkAvhhV0Mtk-unsplash.jpg?raw=true'),
-        radial-gradient(circle at 20% 80%, rgba(0,115,230,0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,0,128,0.4) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(0,255,255,0.3) 0%, transparent 70%),
-        repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0, rgba(0,0,0,0.1) 1px, transparent 1px, transparent 4px);
-    background-blend-mode: overlay, screen, color-dodge, normal;
-    background-size: 400% 400%, 200% 200%, 300% 300%, auto;
-    animation: quantumField 30s ease-in-out infinite;
+    background: 
+        /* Bio-Digital Convergence Background */
+        radial-gradient(circle at 20% 30%, rgba(0,115,230,0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,0,128,0.15) 0%, transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(0,255,255,0.1) 0%, transparent 40%),
+        /* Organic circuit texture overlay */
+        repeating-linear-gradient(45deg, rgba(0,115,230,0.03) 0px, rgba(0,115,230,0.03) 1px, transparent 1px, transparent 11px),
+        repeating-linear-gradient(-45deg, rgba(255,0,128,0.03) 0px, rgba(255,0,128,0.03) 1px, transparent 1px, transparent 11px),
+        /* Base dark background */
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+    background-blend-mode: overlay, overlay, overlay, normal, normal, normal;
+    background-size: 200% 200%, 200% 200%, 200% 200%, 200px 200px, 200px 200px, cover;
+    animation: quantumField 40s ease-in-out infinite, bioDigitalPulse 8s ease-in-out infinite;
+    min-height: 100vh;
 }
 
 body::before {
     content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0,255,255,0.08) 50%, transparent 100%);
-    animation: laserScan 3s linear infinite;
+    background: 
+        /* Bio-organic vein-like patterns */
+        radial-gradient(ellipse at 30% 20%, rgba(0,255,255,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(255,0,128,0.05) 0%, transparent 50%),
+        /* Digital grid faint overlay */
+        linear-gradient(90deg, transparent 99%, rgba(0,115,230,0.02) 100%),
+        linear-gradient(0deg, transparent 99%, rgba(0,115,230,0.02) 100%);
+    background-size: 400% 400%, 400% 400%, 50px 50px, 50px 50px;
+    animation: laserScan 4s linear infinite, quantumField 60s ease-in-out infinite;
 }
 
 /* Navigation */
@@ -361,212 +375,90 @@ body::before {
     text-shadow: 0 0 10px rgba(0,115,230,0.5);
     animation: titleGlow 3s ease-in-out infinite;
 }
-
-/* Make sure the main bio title keeps its specific styling but adds glow */
-.bio-text h1, 
-.about-text h1, 
-.contact-info h1 {
-    font: 400 2.8em/1 Arial; 
-    color: #fff; 
-    margin-bottom: 35px; 
-    position: relative; 
-    display: inline-block;
-    text-shadow: 0 0 10px rgba(0,115,230,0.5);
-    animation: titleGlow 3s ease-in-out infinite;
+.flush-footer {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+  padding: 20px;
+  border-top: 2px solid #0073e6;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
-.bio-text h1:after, 
-.about-text h1:after, 
-.contact-info h1:after {
-    content: ''; 
-    position: absolute; 
-    bottom: -10px; 
-    left: 0; 
-    width: 80px; 
-    height: 3px;
-    background: #0073e6; 
-    box-shadow: 0 0 10px rgba(0,115,230,0.7);
+.flush-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #0073e6, transparent);
 }
 
-/* Ensure h2 elements have consistent styling with glow */
-.bio-text h2, 
-.full-width-section h2,
-.about-text h2,
-.contact-info h2 {
-    font: 400 2em/1 Arial; 
-    color: #fff; 
-    margin: 40px 0 20px; 
-    border-left: 4px solid #0073e6; 
-    padding-left: 15px;
-    text-shadow: 0 0 8px rgba(0,115,230,0.4);
-    animation: titleGlow 3s ease-in-out infinite;
+.flush-footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0,115,230,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,0,128,0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* Update mobile responsive for rounded sections */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.flush-footer span {
+  color: #b3b3b3;
+  font-size: 1.1em;
+  font-weight: 300;
+  text-shadow: 0 0 10px rgba(0,115,230,0.3);
+}
+
+.flush-footer a {
+  color: #00ff88;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid rgba(0,255,136,0.3);
+  border-radius: 4px;
+  background: rgba(0,255,136,0.1);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(0,255,136,0.5);
+  box-shadow: 0 0 15px rgba(0,255,136,0.2);
+}
+
+.flush-footer a:hover {
+  background: rgba(0,255,136,0.2);
+  box-shadow: 0 0 25px rgba(0,255,136,0.4);
+  text-shadow: 0 0 15px rgba(0,255,136,0.8);
+  transform: translateY(-1px);
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-    .about-section, .bio-section, .contact-section {
-        grid-template-columns: 1fr; 
-        gap: 30px; 
-        padding: 30px;
-        border-radius: 10px;
-    }
-    
-    .about-text h1, .bio-text h1, .contact-info h1 {
-        font-size: 2.2em;
-    }
-    
-    .about-text h2, .bio-text h2, .full-width-section h2 {
-        font-size: 1.8em;
-    }
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .flush-footer {
+    padding: 15px 20px;
+  }
 }
 
-/* Update about-section on index.html to be 50/50 split */
-.about-section {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; /* 50/50 split */
-    gap: 60px; 
-    position: relative; 
-    margin-bottom: 60px;
-    background: linear-gradient(135deg,#0a0a0a,#1a1a1a); 
-    padding: 50px; 
-    border-bottom: 3px solid #0073e6;
-    box-shadow: 0 10px 40px rgba(0,115,230,0.15);
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
 
-/* Keep bio-section and contact-section with the original ratio */
-.bio-section, .contact-section {
-    display: grid; 
-    grid-template-columns: 1fr 350px; 
-    gap: 60px; 
-    position: relative; 
-    margin-bottom: 60px;
-    background: linear-gradient(135deg,#0a0a0a,#1a1a1a); 
-    padding: 50px; 
-    border-bottom: 3px solid #0073e6;
-    box-shadow: 0 10px 40px rgba(0,115,230,0.15);
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Update portrait2 image height for the 50/50 layout */
-.portrait2 img {
-    height: 800px; /* Adjusted for better proportion in 50/50 layout */
-}
-
-/* Keep original portrait height for bio-section */
-.portrait img {
-    height: 1000px;
-}
-
-/* Mobile responsive updates */
-@media (max-width: 768px) {
-    .about-section, .bio-section, .contact-section {
-        grid-template-columns: 1fr; 
-        gap: 30px; 
-        padding: 30px;
-        border-radius: 10px;
-    }
-    
-    .about-text h1, .bio-text h1, .contact-info h1 {
-        font-size: 2.2em;
-    }
-    
-    .about-text h2, .bio-text h2, .full-width-section h2 {
-        font-size: 1.8em;
-    }
-    
-    .portrait2 img, .portrait img {
-        height: 400px;
-    }
-}
-
-/* OVERRIDE: Update about-section on index.html to be 50/50 split */
-.container .about-section {
-    display: grid !important; 
-    grid-template-columns: 1fr 1fr !important; /* 50/50 split */
-    gap: 60px; 
-    position: relative; 
-    margin-bottom: 60px;
-    background: linear-gradient(135deg,#0a0a0a,#1a1a1a); 
-    padding: 50px; 
-    border-bottom: 3px solid #0073e6;
-    box-shadow: 0 10px 40px rgba(0,115,230,0.15);
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* OVERRIDE: Update portrait2 image height for the 50/50 layout */
-.container .portrait2 img {
-    height: 800px !important; /* Adjusted for better proportion in 50/50 layout */
-}
-
-/* Keep bio-section and contact-section with the original ratio */
-.container .bio-section, .container .contact-section {
-    display: grid; 
-    grid-template-columns: 1fr 350px; 
-    gap: 60px; 
-    position: relative; 
-    margin-bottom: 60px;
-    background: linear-gradient(135deg,#0a0a0a,#1a1a1a); 
-    padding: 50px; 
-    border-bottom: 3px solid #0073e6;
-    box-shadow: 0 10px 40px rgba(0,115,230,0.15);
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Mobile responsive updates */
-@media (max-width: 768px) {
-    .container .about-section, .container .bio-section, .container .contact-section {
-        grid-template-columns: 1fr !important; 
-        gap: 30px; 
-        padding: 30px;
-        border-radius: 10px;
-    }
-    
-    .container .portrait2 img, .container .portrait img {
-        height: 400px !important;
-    }
-}
-
-.about-section {
-    grid-template-columns: 1fr 1fr !important;
-    align-items: stretch !important;
-    min-height: 600px; /* ← CHANGE THIS VALUE */
-}
-
-.about-section .portrait2 img {
-    height: 100% !important;
-    width: 100%;
-    object-fit: cover;
-}
-
-/* FIX ABOUT PAGE FULL WIDTH - Add to end of styles.css */
-.about-section:not(:has(.portrait2)) {
-    grid-template-columns: 1fr !important;
-    display: grid !important;
-}
-
-.about-section:not(:has(.portrait2)) .about-text {
-    grid-column: 1 / -1 !important;
-    width: 100% !important;
-}
-
-/* Ensure all content spans full width on about page */
-.container .about-section:not(:has(.portrait2)) .about-text h1,
-.container .about-section:not(:has(.portrait2)) .about-text h2,
-.container .about-section:not(:has(.portrait2)) .about-text p,
-.container .about-section:not(:has(.portrait2)) .about-text ul,
-.container .about-section:not(:has(.portrait2)) .about-text .social-feeds {
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-/* Make sure headings are block level */
-.about-text h1, 
-.about-text h2 {
-    display: block !important;
-    width: 100% !important;
-}
+/* Make sure the main bio title keeps its specific styling but adds glow
