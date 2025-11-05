@@ -1,0 +1,127 @@
+/* sections.css - Section layouts */
+.about-section, .bio-section, .contact-section {
+    display: grid; 
+    grid-template-columns: 1fr 350px; 
+    gap: 60px; 
+    position: relative; 
+    margin-bottom: 60px;
+    background: linear-gradient(135deg,#0a0a0a,#1a1a1a); 
+    padding: 50px; 
+    border-bottom: 3px solid #0073e6;
+    box-shadow: 0 10px 40px rgba(0,115,230,0.15);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-section:not(:has(.portrait)) { 
+    grid-template-columns: 1fr; 
+    display: block; 
+}
+
+.about-section:before, .bio-section:before, .contact-section:before {
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0073e6, transparent);
+}
+
+/* Text Content */
+.about-text h1, .bio-text h1, .contact-info h1 {
+    font: 400 2.8em/1 Arial; 
+    color: #fff; 
+    margin-bottom: 35px; 
+    position: relative; 
+    display: inline-block;
+    text-shadow: 0 0 10px rgba(0,115,230,0.5);
+}
+
+.about-text h1:after, .bio-text h1:after, .contact-info h1:after {
+    content: ''; 
+    position: absolute; 
+    bottom: -10px; 
+    left: 0; 
+    width: 80px; 
+    height: 3px;
+    background: #0073e6; 
+    box-shadow: 0 0 10px rgba(0,115,230,0.7);
+}
+
+.about-text p, .bio-text p, .contact-info p { 
+    font: 300 1.3em/1.8 Arial; 
+    color: #b3b3b3; 
+    margin-bottom: 2em; 
+}
+
+/* Lists */
+.about-text ul, .bio-text ul { 
+    color: #b3b3b3; 
+    font-size: 1.3em; 
+    line-height: 1.8; 
+    margin: 1em 0 2em; 
+    padding-left: 1.5em; 
+    list-style-type: disc; 
+}
+
+.about-text li, .bio-text li { 
+    margin-bottom: 0.8em; 
+}
+
+.about-text li:before, .bio-text li:before { 
+    display: none; 
+}
+
+/* Full Width Sections for Faculty Page */
+.full-width-section {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    background: linear-gradient(135deg,#0a0a0a,#1a1a1a);
+    border-bottom: 3px solid #0073e6;
+    box-shadow: 0 10px 40px rgba(0,115,230,0.15);
+    position: relative;
+    margin-bottom: 60px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.full-width-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0073e6, transparent);
+}
+
+.full-width-section h2 {
+    font: 400 2em/1 Arial;
+    color: #fff;
+    margin: 0 0 20px;
+    border-left: 4px solid #0073e6;
+    padding-left: 15px;
+    text-shadow: 0 0 8px rgba(0,115,230,0.4);
+}
+
+.full-width-section p {
+    font: 300 1.3em/1.8 Arial;
+    color: #b3b3b3;
+    margin-bottom: 2em;
+}
+
+.full-width-section ul {
+    color: #b3b3b3;
+    font-size: 1.3em;
+    line-height: 1.8;
+    margin: 1em 0 2em;
+    padding-left: 1.5em;
+    list-style-type: disc;
+}
+
+.full-width-section li {
+    margin-bottom: 0.8em;
+}

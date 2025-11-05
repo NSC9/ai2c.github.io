@@ -1,0 +1,31 @@
+/* portraits.css - Image and portrait styles */
+.portrait2, .portrait { 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    overflow: hidden;
+}
+
+.portrait2 img, .portrait img {
+    width: 100%; 
+    object-fit: cover; 
+    border-radius: 5px; 
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    animation: panDown 8s linear infinite;
+}
+
+.portrait2 img { 
+    height: 200px;
+}
+
+.portrait img { 
+    height: 800px; 
+}
+
+/* Image Transitions */
+#rotatingImage, #rotatingImage2 { 
+    transition: opacity 1.5s ease-in-out; 
+    opacity: 1; 
+    will-change: opacity; 
+}

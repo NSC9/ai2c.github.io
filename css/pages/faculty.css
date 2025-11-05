@@ -1,0 +1,24 @@
+/* faculty.css - Faculty page specific styles */
+.bio-text h2 { 
+    font: 400 2em/1 Arial; 
+    color: #fff; 
+    margin: 40px 0 20px; 
+    border-left: 4px solid #0073e6; 
+    padding-left: 15px; 
+    text-shadow: 0 0 8px rgba(0,115,230,0.4); 
+}
+
+/* Update bio-section to have rounded corners */
+.bio-section {
+    display: grid; 
+    grid-template-columns: 1fr 350px; 
+    gap: 60px; 
+    position: relative; 
+    margin-bottom: 60px;
+    background: linear-gradient(135deg,#0a0a0a,#1a1a1a); 
+    padding: 50px; 
+    border-bottom: 3px solid #0073e6;
+    box-shadow: 0 10px 40px rgba(0,115,230,0.15);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}

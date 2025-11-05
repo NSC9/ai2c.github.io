@@ -1,0 +1,182 @@
+/* responsive.css - Media queries */
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    html { 
+        transform: scale(1); 
+    }
+    
+    .hamburger { 
+        display: flex; 
+    }
+    
+    .nav-menu { 
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        width: 100%; 
+        background: linear-gradient(135deg,#000,#1a1a2e); 
+        flex-direction: column; 
+        padding: 20px; 
+    }
+    
+    .nav-menu.active { 
+        display: flex; 
+    }
+    
+    .title h1 { 
+        font-size: 2.5em; 
+        padding: 20px 0; 
+    }
+    
+    .about-section, .bio-section, .contact-section { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        padding: 30px; 
+    }
+    
+    .about-text h1, .bio-text h1, .contact-info h1 { 
+        font-size: 2.2em; 
+    }
+    
+    .about-text p, .bio-text p, .contact-info p { 
+        font-size: 1.1em; 
+    }
+    
+    .portrait2 img, .portrait img { 
+        height: 400px; 
+    }
+    
+    .social-links { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .social-links a { 
+        width: 200px; 
+        margin: 8px 0; 
+    }
+    
+    .published-papers ul { 
+        column-count: 1; 
+    }
+    
+    .published-papers, .contact-form { 
+        padding: 20px; 
+    }
+    
+    .social-feeds, .publications-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .research-interests { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .stats-grid { 
+        grid-template-columns: repeat(2,1fr); 
+    }
+    
+    /* Full width sections mobile */
+    .full-width-section {
+        padding: 30px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .full-width-section h2 {
+        font-size: 1.8em;
+    }
+    
+    .full-width-section p,
+    .full-width-section ul {
+        font-size: 1.1em;
+    }
+    
+    /* Footer mobile */
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .flush-footer {
+        padding: 15px 20px;
+    }
+    
+    /* Payment mobile */
+    .payment-section {
+        padding: 30px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .payment-header h2 {
+        font-size: 2.2em;
+    }
+    
+    .payment-header p {
+        font-size: 1.1em;
+    }
+    
+    .amount-display {
+        font-size: 2.5em;
+    }
+    
+    .payment-form-group label {
+        font-size: 1.1em;
+    }
+    
+    .payment-form-group input {
+        font-size: 1em;
+        padding: 12px;
+    }
+    
+    .btn-payment {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+    
+    .payment-success {
+        padding: 30px 20px;
+    }
+    
+    .payment-success i {
+        font-size: 3em;
+    }
+    
+    .payment-success h3 {
+        font-size: 1.8em;
+    }
+    
+    .payment-success p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .publication-categories { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .category-btn { 
+        width: 200px; 
+    }
+    
+    /* Payment extra small */
+    .payment-section {
+        padding: 25px 15px;
+    }
+    
+    .payment-header h2 {
+        font-size: 1.8em;
+    }
+    
+    .amount-display {
+        font-size: 2em;
+    }
+}

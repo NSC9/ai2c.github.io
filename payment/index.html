@@ -1,0 +1,238 @@
+<!-- Payment -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Automated Intelligence Community College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/payment.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        /* Keep only essential body styles that might be missing from main.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Add key animations that might be missing */
+        @keyframes pulse { 
+            0%,100% { text-shadow: 0 0 5px rgba(0,115,230,0.8), 0 0 10px rgba(0,115,230,0.8); } 
+            50% { text-shadow: 0 0 15px rgba(0,115,230,1), 0 0 25px rgba(0,115,230,0.8); } 
+        }
+        
+        @keyframes titleGlow { 
+            0%,100% { text-shadow: 0 0 20px #0073e6, 0 0 30px #0073e6, 0 0 40px #0073e6; } 
+            50% { text-shadow: 0 0 30px #00a8ff, 0 0 40px #00a8ff, 0 0 50px #00a8ff, 0 0 60px #00a8ff; } 
+        }
+
+    </style>
+</head>
+<body>
+
+    <
+    <!-- Navigation -->
+	<nav class="main-nav">
+		<div class="nav-container">
+			<a href="/" class="nav-logo">AI2C</a>
+			<div class="nav-menu">
+				<a href="/">Home</a>
+				<a href="about/index.html">About</a>
+				<a href="faculty/index.html">Faculty</a>
+				<a href="publications/index.html">Publications</a>
+				<a href="contact/index.html">Contact</a>
+			</div>
+			<div class="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</nav>
+
+    <div class="container">
+        <section class="payment-section">
+            <div class="payment-header">
+                <h2>Complete Your Payment</h2>
+                <p>Powered by Stripe - Secure payment processing</p>
+            </div>
+            
+            <div class="amount-display" id="amount-display">$29.99</div>
+            
+            <form id="payment-form">
+                <div class="payment-form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="payment-form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="john.doe@example.com" required>
+                </div>
+                
+                <div class="payment-form-group">
+                    <label for="card-element">Card Information</label>
+                    <div id="card-element">
+                        <!-- Stripe Card Element will be inserted here -->
+                    </div>
+                    <div id="card-errors" role="alert"></div>
+                </div>
+                
+                <div class="payment-form-group">
+                    <label for="amount">Amount ($)</label>
+                    <input type="number" id="amount" value="29.99" step="0.01" min="1" required>
+                </div>
+                
+                <button type="submit" class="btn-payment" id="submit-button">
+                    <span class="button-text">Pay Now</span>
+                </button>
+            </form>
+            
+            <div class="payment-success" id="payment-success">
+                <i class="fas fa-check-circle"></i>
+                <h3>Payment Successful!</h3>
+                <p>Thank you for your payment. A confirmation email has been sent to your email address.</p>
+                <p>Transaction ID: <span id="transaction-id">txn_123456789</span></p>
+            </div>
+            
+            <div class="security-note">
+                <i class="fas fa-lock"></i>
+                <small>Your payment information is encrypted and secure. We do not store your card details.</small>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Update amount display
+        document.getElementById('amount').addEventListener('input', function() {
+            document.getElementById('amount-display').textContent = '$' + this.value;
+        });
+
+        // Stripe Integration
+        const stripe = Stripe('pk_live_51SPfK8K1N96LdMAwVqZXRyrFgEwyR7BRpj50C4cKq0OJbb4eX4gOPGYsn5Ans47o08GHvzJOyCXhC0EewJJLwVod00WFzaRAIp');
+        
+        const elements = stripe.elements();
+        
+        // Custom styling for the card element
+        const style = {
+            base: {
+                color: '#fff',
+                fontFamily: 'Arial, sans-serif',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
+                '::placeholder': {
+                    color: '#b3b3b3'
+                }
+            },
+            invalid: {
+                color: '#ff6b6b',
+                iconColor: '#ff6b6b'
+            }
+        };
+        
+        // Create and mount the card element
+        const card = elements.create('card', { style: style });
+        card.mount('#card-element');
+        
+        // Handle real-time validation errors from the card Element
+        card.addEventListener('change', function(event) {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+        
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = submitButton.querySelector('.button-text');
+        
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            
+            // Disable the submit button to prevent multiple submissions
+            submitButton.disabled = true;
+            buttonText.textContent = 'Processing...';
+            
+            // Show loading animation
+            submitButton.innerHTML = '<div class="loading"></div> Processing...';
+            
+            const { paymentMethod, error } = await stripe.createPaymentMethod({
+                type: 'card',
+                card: card,
+                billing_details: {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                },
+            });
+            
+            if (error) {
+                // Show error to customer
+                const errorElement = document.getElementById('card-errors');
+                errorElement.textContent = error.message;
+                
+                // Re-enable the submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<span class="button-text">Pay Now</span>';
+            } else {
+                // In a real implementation, you would send the paymentMethod.id to your server
+                // along with the amount to create a PaymentIntent
+                
+                // For this demo, we'll simulate a successful payment
+                setTimeout(() => {
+                    // Show success message
+                    document.getElementById('payment-success').style.display = 'block';
+                    document.getElementById('transaction-id').textContent = 'txn_' + Math.random().toString(36).substr(2, 9);
+                    
+                    // Reset form
+                    form.reset();
+                    card.clear();
+                    document.getElementById('amount-display').textContent = '$29.99';
+                    
+                    // Re-enable the submit button
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<span class="button-text">Pay Now</span>';
+                    
+                    // Scroll to success message
+                    document.getElementById('payment-success').scrollIntoView({ behavior: 'smooth' });
+                }, 2000);
+            }
+        });
+        
+        // Add a note about Stripe fees
+        document.addEventListener('DOMContentLoaded', function() {
+            const securityNote = document.querySelector('.security-note');
+            const feeNote = document.createElement('div');
+            feeNote.className = 'fee-note';
+            feeNote.innerHTML = '<small><i class="fas fa-info-circle"></i> Stripe charges a small processing fee (2.9% + $0.30) for each transaction</small>';
+            securityNote.appendChild(feeNote);
+        });
+    </script>
+	
+<footer class="flush-footer">
+  <div class="footer-content">
+    <span>&copy; Automated Intelligence Community College. All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>

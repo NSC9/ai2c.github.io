@@ -1,0 +1,62 @@
+/* animations.css - All keyframe animations */
+@keyframes pulse { 
+    0%,100% { text-shadow: 0 0 5px rgba(0,0,255,0.8), 0 0 10px rgba(0,0,255,0.8); } 
+    50% { text-shadow: 0 0 15px rgba(0,0,255,1), 0 0 25px rgba(0,0,255,0.8); } 
+}
+
+@keyframes shiftBackground { 
+    0% { background-position: top left; } 
+    100% { background-position: top right; } 
+}
+
+@keyframes rippleEffect { 
+    0% { background-size: 6%; } 
+    50% { background-size: 50%; } 
+    100% { background-size: 100%; } 
+}
+
+@keyframes titleGlow { 
+    0%,100% { text-shadow: 0 0 20px #0073e6, 0 0 30px #0073e6, 0 0 40px #0073e6; } 
+    50% { text-shadow: 0 0 30px #00a8ff, 0 0 40px #00a8ff, 0 0 50px #00a8ff, 0 0 60px #00a8ff; } 
+}
+
+@keyframes titleFloat { 
+    0%,100% { transform: translateY(0); } 
+    50% { transform: translateY(-5px); } 
+}
+
+@keyframes hologramField { 
+    0%,100% { background-position: center center, 0% 0%, 100% 100%, 0% 0%; filter: hue-rotate(0) contrast(150%) saturate(180%) brightness(110%); background-size: 140% 140%, 220% 220%, 320% 320%, auto; } 
+    25% { background-position: center center, 100% 25%, 0% 75%, 25% 25%; filter: hue-rotate(90deg) contrast(170%) saturate(220%) brightness(120%); background-size: 160% 160%, 240% 240%, 340% 340%, auto; } 
+    50% { background-position: center center, 25% 100%, 75% 0%, 50% 50%; filter: hue-rotate(180deg) contrast(190%) saturate(260%) brightness(130%); background-size: 180% 180%, 260% 260%, 360% 360%, auto; } 
+    75% { background-position: center center, 100% 75%, 0% 25%, 75% 75%; filter: hue-rotate(270deg) contrast(170%) saturate(220%) brightness(120%); background-size: 160% 160%, 240% 240%, 340% 340%, auto; } 
+}
+
+@keyframes laserScan { 
+    0% { transform: translateY(-100%); } 
+    100% { transform: translateY(100%); } 
+}
+
+@keyframes titleShine { 
+    0% { left: -100%; } 
+    50%,100% { left: 100%; } 
+}
+
+@keyframes quantumField { 
+    0% { background-position: 0% 0%, 0% 0%, 100% 100%, 0% 0%; } 
+    100% { background-position: 100% 100%, 100% 100%, 0% 0%, 100% 100%; } 
+}
+
+@keyframes bioDigitalPulse { 
+    0%,100% { filter: hue-rotate(0deg) brightness(100%) contrast(110%); } 
+    50% { filter: hue-rotate(5deg) brightness(110%) contrast(120%); } 
+}
+
+@keyframes panDown {
+    0% { 
+        object-position: top; 
+    }
+    100% { 
+        object-position: bottom; 
+    }
+}

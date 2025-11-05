@@ -1,0 +1,584 @@
+/* main.css - Import all modular CSS files */
+@import url('./base/reset.css');
+@import url('./base/animations.css');
+@import url('./base/layout.css');
+@import url('./components/navigation.css');
+@import url('./components/sections.css');
+@import url('./components/cards.css');
+@import url('./components/portraits.css');
+@import url('./components/social-links.css');
+@import url('./components/forms.css');
+@import url('./pages/faculty.css');
+@import url('./pages/publications.css');
+@import url('./pages/contact.css');
+@import url('./pages/payment.css');
+@import url('./utilities/responsive.css');
+@import url('./utilities/effects.css');
+
+/* main.css - Import all modular CSS files */
+@import url('./base/reset.css');
+@import url('./base/animations.css');
+@import url('./base/layout.css');
+@import url('./components/navigation.css');
+@import url('./components/sections.css');
+@import url('./components/cards.css');
+@import url('./components/portraits.css');
+@import url('./components/social-links.css');
+@import url('./components/forms.css');
+@import url('./pages/faculty.css');
+@import url('./pages/publications.css');
+@import url('./pages/contact.css');
+@import url('./pages/payment.css');
+@import url('./utilities/responsive.css');
+@import url('./utilities/effects.css');
+
+/* Unified Navigation Styles (Harmonized with styles.css) */
+/* Core Navigation Container */
+.main-nav {
+    background: linear-gradient(135deg, #000, #1a1a2e);
+    border-bottom: 2px solid #0073e6;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    /* Mobile fix: Allow wrapping to prevent hamburger push */
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.nav-logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0; /* Keeps it from spreading too wide */
+    max-width: 50%; /* Ensures menu & hamburger still have space */
+    overflow: hidden; /* Just in case */
+}
+
+/* Menu */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all .3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-menu a:hover {
+    color: #fff;
+    background: rgba(0,115,230,0.2);
+}
+
+.nav-menu a.active {
+    color: #fff;
+    background: rgba(0,115,230,0.3);
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: #fff;
+    transition: .3s;
+}
+
+/* FORCE ALL NAV TEXT TO WHITE (Override for consistency) */
+.main-nav,
+.main-nav * {
+    color: #fff !important;
+}
+
+.nav-full-name .name-line {
+    color: #fff !important;
+}
+
+.nav-menu a {
+    color: #fff !important;
+}
+
+.nav-menu a i {
+    color: #fff !important;
+}
+
+.hamburger span {
+    background: #fff !important;
+}
+
+/* ✅ MOBILE FIX (Enhanced with styles.css responsive) */
+@media (max-width: 900px) {
+    /* Let header items wrap instead of pushing hamburger away */
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* IMPORTANT: Show hamburger on mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Prevent logo area from taking too much width */
+    .nav-logo-container {
+        max-width: 60%;
+    }
+
+    /* Menu collapses under logo + hamburger */
+    .nav-menu {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+        background: linear-gradient(135deg, #000, #1a1a2e); /* From styles.css for mobile dropdown */
+        padding: 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+/* Additional mobile override from styles.css */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #000, #1a1a2e);
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+/* Base Styles */
+.main-nav {
+    background-color: #0A2540; /* Cosmic blue from logo palette */
+    color: white;
+    padding: 1rem;
+    font-family: 'Futura', 'Arial', sans-serif;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00BFFF; /* Teal accent */
+    text-decoration: none;
+}
+
+.nav-full-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+.name-line {
+    line-height: 1;
+}
+
+/* Desktop Menu */
+.nav-menu-desktop {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu-desktop a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu-desktop a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Toggle Button */
+.menu-toggle {
+    background: none;
+    border: 2px solid #00BFFF;
+    color: white;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    display: none; /* Hidden on desktop */
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background-color: rgba(0, 191, 255, 0.1);
+    outline: none;
+}
+
+.menu-toggle::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #00BFFF; /* Up arrow */
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg); /* Down arrow */
+    border-top: 5px solid #00BFFF;
+    border-bottom: none;
+}
+
+/* Mobile Off-Canvas Menu */
+.nav-menu-mobile {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #0A2540;
+    padding: 5rem 1rem 1rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.nav-menu-mobile[aria-hidden="false"] {
+    right: 0;
+}
+
+.nav-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu-list li {
+    margin-bottom: 1rem;
+}
+
+.nav-menu-list a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu-list a:hover {
+    background-color: rgba(0, 191, 255, 0.1);
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu-desktop {
+        display: none;
+    }
+    
+    body.menu-open {
+        overflow: hidden; /* Prevent body scroll when menu open */
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-menu-mobile,
+    .menu-overlay,
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Updated Mobile Navigation Fix in main.css */
+/* Ensure nav-container is positioned relative to contain the absolute menu */
+.nav-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    flex-wrap: wrap;
+    position: relative; /* ✅ NEW: Contains the absolute positioned menu below it */
+    z-index: 1001; /* ✅ NEW: Keeps container (and hamburger) above the menu */
+}
+
+/* Hamburger - Ensure it stays visible/on top */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1002; /* ✅ NEW: Forces hamburger above everything, like MIT-style visibility */
+    position: relative; /* ✅ NEW: Ensures it's not affected by absolute siblings */
+}
+
+/* Mobile Menu - Position strictly below with offset to avoid overlap */
+@media (max-width: 900px) {
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .hamburger {
+        display: flex;
+        z-index: 1002;
+        position: relative;
+    }
+
+    .nav-logo-container {
+        max-width: 60%;
+    }
+
+    .nav-menu {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 0; /* Reset any prior margin */
+        background: linear-gradient(135deg, #000, #1a1a2e);
+        padding: 20px;
+        position: absolute;
+        top: calc(100% + 5px); /* ✅ UPDATED: Slight offset below container to prevent overlap/cover */
+        left: 0;
+        right: 0; /* ✅ NEW: Full width, ensures alignment */
+        border-top: 1px solid rgba(0, 115, 230, 0.3); /* ✅ NEW: Visual separator like a "below" indicator */
+        box-shadow: 0 -2px 10px rgba(0, 115, 230, 0.2); /* ✅ NEW: Subtle shadow to emphasize it's below */
+        z-index: 999; /* ✅ NEW: Below hamburger/container for non-overlap */
+    }
+
+    .nav-menu.active {
+        display: flex;
+        z-index: 999;
+    }
+}
+
+/* Additional mobile override (merged for consistency) */
+@media (max-width: 768px) {
+    /* Reuse the above rules - no duplication needed */
+    .nav-menu {
+        top: calc(100% + 5px); /* Consistent offset */
+        padding: 20px;
+        /* ... other styles as before */
+    }
+}
+/* Right-Align Social Icons */
+.desktop-social {
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+}
+
+.mobile-social-links {
+    justify-content: flex-end;
+    padding-right: 20px; /* Extra space from right edge */
+    gap: 10px;
+}
+
+
+/* Flush Right & Padding Between Social Icons */
+.desktop-social {
+    margin-left: auto;
+    display: flex;
+    gap: 10px; /* Padding between buttons */
+    padding-right: 10px; /* Flush right with buffer from edge */
+}
+
+.mobile-social-links {
+    justify-content: flex-end;
+    padding-right: 20px; /* Flush right with buffer */
+    gap: 12px; /* Padding between buttons on mobile */
+}
+
+/* Ensure SVGs Fit Cleanly (No Artifacts) */
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block; /* Prevents any inline spacing issues */
+}
+/* Scaled Social Icons (Desktop: 40px, Mobile: 36px) - Override Everything */
+.social-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;  /* ← Button width (change here for desktop) */
+    height: 40px !important; /* ← Button height (square for circles) */
+    font-size: 1.2em; /* Fallback if using FA icons */
+    text-decoration: none !important;
+    color: #fff !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    margin: 0 5px; /* Spacing fallback */
+    background: rgba(255, 255, 255, 0.1) !important;
+    flex-shrink: 0; /* Prevents squish in flex */
+    box-sizing: border-box !important; /* Includes padding/border in size */
+}
+
+.social-icon:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 0 10px rgba(0, 115, 230, 0.5) !important;
+    background: rgba(0, 115, 230, 0.3) !important;
+}
+
+/* SVG Fill (No Whitespace/Overflow) */
+.social-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    flex-shrink: 0;
+}
+
+/* Wrappers (Ensure No Constraints) */
+.desktop-social {
+    margin-left: auto !important;
+    display: flex !important;
+    gap: 10px !important; /* Padding between */
+    padding-right: 10px !important;
+    align-items: center !important;
+}
+
+.mobile-social-links {
+    justify-content: flex-end !important;
+    padding-right: 20px !important;
+    gap: 12px !important;
+    align-items: center !important;
+}
+
+/* Mobile Override */
+@media (max-width: 900px) {
+    .mobile-social-links .social-icon {
+        width: 36px !important;  /* ← Mobile button width (smaller) */
+        height: 36px !important; /* ← Mobile button height */
+    }
+}
+
+
+/* Social Already Right-Aligned, Ensure Consistency */
+.mobile-social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 15px 20px 15px 0; /* Right padding only */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 115, 230, 0.05);
+    margin-top: auto;
+    width: 90%;
+    align-self: flex-end;
+}
+.nav-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0; /* Remove left margin */
+    width: 100%;
+    align-self: flex-end; /* Push list to right */
+    padding-right: 20px; /* Indent from right edge */
+}
+
+
+/* Simple Right-Align for Mobile Menu Buttons Only */
+.nav-menu-mobile {
+
+    /* FLEX LAYOUT */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;    /* ✅ right-alignment */
+    text-align: left;        /* optional text alignment */
+
+    width: 50%;
+    box-sizing: border-box;
+}

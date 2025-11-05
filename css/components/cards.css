@@ -1,0 +1,208 @@
+/* cards.css - Card components */
+/* Published Papers */
+.published-papers {
+    margin-top: 40px; 
+    background: linear-gradient(135deg,#000,#1a1a2e); 
+    padding: 40px; 
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1); 
+    box-shadow: 0 10px 30px rgba(0,115,230,0.1);
+}
+
+.published-papers h2 {
+    font: 300 3em/1 Arial; 
+    color: #fff; 
+    text-align: center; 
+    margin-bottom: 30px; 
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    position: relative; 
+    text-shadow: 0 0 15px rgba(0,115,230,0.4);
+}
+
+.published-papers h2:after {
+    content: ''; 
+    position: absolute; 
+    bottom: -10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100px; 
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #66b3ff, transparent); 
+    box-shadow: 0 0 10px rgba(102,179,255,0.5);
+}
+
+.published-papers ul { 
+    list-style: none; 
+    padding: 0; 
+    font-size: 1.3em; 
+    column-count: 2; 
+    column-gap: 40px; 
+}
+
+.published-papers ul li {
+    margin-bottom: 20px; 
+    padding: 18px; 
+    position: relative; 
+    overflow: hidden; 
+    transition: all .4s ease;
+    background: rgba(255,255,255,0.03); 
+    border-radius: 10px; 
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.published-papers ul li:before {
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: -100%; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102,179,255,0.1), transparent); 
+    transition: left .5s ease;
+}
+
+.published-papers ul li:hover {
+    background: rgba(255,255,255,0.08); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(102,179,255,0.1); 
+    border-color: rgba(102,179,255,0.3);
+}
+
+.published-papers ul li:hover:before { 
+    left: 100%; 
+}
+
+.published-papers ul li a { 
+    color: #e6f2ff; 
+    text-decoration: none; 
+    line-height: 1.5; 
+    display: block; 
+    font-weight: 300; 
+    letter-spacing: 0.5px; 
+}
+
+.published-papers ul li a:hover { 
+    color: #99ccff; 
+    text-shadow: 0 0 8px rgba(153,204,255,0.5); 
+}
+
+.published-papers ul li em { 
+    color: #66b3ff; 
+    font-style: italic; 
+}
+
+/* Social Feeds */
+.social-feeds { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    gap: 30px; 
+    margin-top: 50px; 
+}
+
+.social-card { 
+    background: linear-gradient(135deg,#000,#1a1a2e); 
+    padding: 25px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    box-shadow: 0 10px 30px rgba(0,115,230,0.1); 
+}
+
+.social-card h3 { 
+    color: #fff; 
+    font-size: 1.5em; 
+    margin-bottom: 20px; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    text-shadow: 0 0 8px rgba(0,115,230,0.4); 
+}
+
+.social-card h3 i { 
+    color: #0073e6; 
+    text-shadow: 0 0 10px rgba(0,115,230,0.6); 
+}
+
+.feed-item { 
+    background: rgba(255,255,255,0.03); 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    transition: all .3s ease; 
+}
+
+.feed-item:hover { 
+    background: rgba(255,255,255,0.08); 
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(0,115,230,0.1); 
+}
+
+.feed-item a { 
+    color: #e6f2ff; 
+    text-decoration: none; 
+    display: block; 
+}
+
+.feed-item a:hover { 
+    color: #99ccff; 
+    text-shadow: 0 0 5px rgba(153,204,255,0.4); 
+}
+
+.feed-date { 
+    color: #66b3ff; 
+    font-size: 0.9em; 
+    margin-top: 10px; 
+}
+
+.loading, .error { 
+    text-align: center; 
+}
+
+.loading { 
+    color: #b3b3b3; 
+    font-style: italic; 
+}
+
+.error { 
+    color: #ff6b6b; 
+}
+
+/* Research Cards */
+.research-interests { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin: 40px 0; 
+}
+
+.research-card { 
+    background: rgba(255,255,255,0.03); 
+    padding: 25px; 
+    border-radius: 10px; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    transition: all .4s ease; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.research-card:hover { 
+    background: rgba(255,255,255,0.08); 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(102,179,255,0.1); 
+    border-color: rgba(102,179,255,0.3); 
+}
+
+.research-card h3 { 
+    color: #fff; 
+    font-size: 1.5em; 
+    margin-bottom: 15px; 
+    font-weight: 400; 
+}
+
+.research-card p { 
+    color: #b3b3b3; 
+    font-size: 1.1em; 
+    line-height: 1.6; 
+    margin: 0; 
+}

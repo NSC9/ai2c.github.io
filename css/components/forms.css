@@ -1,0 +1,75 @@
+/* forms.css - Shared form styles between contact and payment forms */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1em;
+    transition: all .3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 10px rgba(0,115,230,0.3);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg,#0073e6,#005bb5);
+    color: #fff;
+    border: none;
+    padding: 18px 40px;
+    font: bold 1.2em Arial;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg,#005bb5,#004a9c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,115,230,0.3);
+}
+
+.form-message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+}
+
+.form-message.success {
+    background: rgba(0,255,0,0.1);
+    border: 1px solid rgba(0,255,0,0.3);
+    color: #0f0;
+}
+
+.form-message.error {
+    background: rgba(255,0,0,0.1);
+    border: 1px solid rgba(255,0,0,0.3);
+    color: #ff6b6b;
+}

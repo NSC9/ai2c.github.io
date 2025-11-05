@@ -1,0 +1,38 @@
+root/
+├── index.html              # Homepage
+├── about/
+│   └── index.html          # About page
+├── faculty/
+│   └── index.html          # Faculty page
+├── publications/
+│   └── index.html          # Publications page
+├── contact/
+│   └── index.html          # Contact page
+├── payment/
+│   └── index.html          # Payment page
+├── css/
+│   ├── main.css            # Main import file
+│   ├── styles.css          # Original styles (backup)
+│   ├── base/
+│   │   ├── reset.css
+│   │   ├── animations.css
+│   │   └── layout.css
+│   ├── components/
+│   │   ├── navigation.css
+│   │   ├── sections.css
+│   │   ├── cards.css
+│   │   ├── portraits.css
+│   │   ├── social-links.css
+│   │   └── forms.css
+│   ├── pages/
+│   │   ├── faculty.css
+│   │   ├── publications.css
+│   │   ├── contact.css
+│   │   └── payment.css
+│   └── utilities/
+│       ├── responsive.css
+│       └── effects.css
+├── images/                  # image assets
+├── navigation.html          # Navigation partial
+├── common.js               # Shared JavaScript
+└── (other files: CNAME, LICENSE, README.md)

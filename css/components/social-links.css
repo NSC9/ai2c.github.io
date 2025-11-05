@@ -1,0 +1,61 @@
+/* social-links.css - Social media links */
+.social-links { 
+    margin-top: 30px; 
+    display: grid; 
+    grid-template-columns: repeat(3,1fr); 
+    gap: 15px; 
+    align-items: center; 
+}
+
+.social-links a {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 18px 15px; 
+    min-height: 60px;
+    font: bold 1.3em Arial; 
+    text-decoration: none; 
+    color: #fff; 
+    border-radius: 12px; 
+    transition: all .3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
+    text-align: center;
+}
+
+.social-links i { 
+    margin-right: 10px; 
+    font-size: 1.2em; 
+}
+
+/* Social Link Colors */
+.social-links a[href*="youtube"] { 
+    background: linear-gradient(135deg,#f00,#c00); 
+}
+
+.social-links a[href*="youtube"]:hover { 
+    background: linear-gradient(135deg,#c00,#900); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(255,0,0,0.4); 
+}
+
+.social-links a[href*="x.com"], 
+.social-links a[href*="twitter.com"] { 
+    background: linear-gradient(135deg,#000,#333); 
+}
+
+.social-links a[href*="x.com"]:hover, 
+.social-links a[href*="twitter.com"]:hover { 
+    background: linear-gradient(135deg,#333,#666); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+}
+
+.social-links a[href*="github.com"] { 
+    background: linear-gradient(135deg,#333,#555); 
+}
+
+.social-links a[href*="github.com"]:hover { 
+    background: linear-gradient(135deg,#555,#777); 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+}

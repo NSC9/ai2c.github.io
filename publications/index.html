@@ -1,3 +1,4 @@
+<!-- Publications -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,27 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Automated Intelligence Community College</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">AI2C</a>
-            <div class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="faculty.html">Faculty</a>
-                <a href="publications.html" class="active">Publications</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+<!-- Enhanced Mobile Navigation with Accessible Text Toggle -->
+<nav class="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <!-- Logo + Name Block -->
+        <div class="nav-logo-container">
+            <a href="/" class="nav-logo" aria-label="AI2C Home">AI2C</a>
+            <div class="nav-full-name">
+                <div class="name-line">AUTOMATED</div>
+                <div class="name-line">INTELLIGENCE</div>
+                <div class="name-line">COMMUNITY</div>
+                <div class="name-line">COLLEGE</div>
             </div>
         </div>
-    </nav>
+
+        <!-- Desktop Menu (Hidden on Mobile) -->
+        <div class="nav-menu-desktop">
+            <a href="/"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
+            <a href="/about/"><i class="fas fa-info-circle" aria-hidden="true"></i><span>About</span></a>
+            <a href="/faculty/"><i class="fas fa-user-graduate" aria-hidden="true"></i><span>Faculty</span></a>
+            <a href="/publications/"><i class="fas fa-file-alt" aria-hidden="true"></i><span>Publications</span></a>
+            <a href="/contact/"><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a>
+            <!-- Social Icons Wrapped for Right Alignment (SVG for Reliability, No Text, Small Logos) -->
+            <div class="desktop-social">
+                <a href="https://youtube.com/@ai2c" target="_blank" aria-label="YouTube" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 10 10">
+                        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/AI2C__" target="_blank" aria-label="X (Twitter)" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 10 10">
+                        <path d="M9.5,6.8l5.8-6.2h-1.4l-5,5.4l-4-5.4H0l6.2,8.2L0,15.5h1.4l5.4-5.9l4.4,5.9H16L9.5,6.8z M2.1,1.6h2.2l9.7,12.9h-2.2L2.1,1.6z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/NSC9/Sample_of_Work" target="_blank" aria-label="GitHub" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 10 10">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu-mobile">
+            MENU
+        </button>
+    </div>
+
+    <!-- Mobile Off-Canvas Menu (Hidden by Default) -->
+    <div id="nav-menu-mobile" class="nav-menu-mobile" role="menu" aria-hidden="true">
+        <ul class="nav-menu-list">
+            <li role="menuitem"><a href="/"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a></li>
+            <li role="menuitem"><a href="/about/"><i class="fas fa-info-circle" aria-hidden="true"></i><span>About</span></a></li>
+            <li role="menuitem"><a href="/faculty/"><i class="fas fa-user-graduate" aria-hidden="true"></i><span>Faculty</span></a></li>
+            <li role="menuitem"><a href="/publications/"><i class="fas fa-file-alt" aria-hidden="true"></i><span>Publications</span></a></li>
+            <li role="menuitem"><a href="/contact/"><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a></li>
+        </ul>
+        <!-- Social Icons Tied to Bottom, Right-Aligned (SVG for Reliability, No Text, Small Logos) -->
+        <div class="mobile-social-links">
+            <a href="https://youtube.com/@ai2c" target="_blank" aria-label="YouTube" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                </svg>
+            </a>
+            <a href="https://x.com/AI2C__" target="_blank" aria-label="X (Twitter)" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M9.5,6.8l5.8-6.2h-1.4l-5,5.4l-4-5.4H0l6.2,8.2L0,15.5h1.4l5.4-5.9l4.4,5.9H16L9.5,6.8z M2.1,1.6h2.2l9.7,12.9h-2.2L2.1,1.6z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/NSC9/Sample_of_Work" target="_blank" aria-label="GitHub" class="social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay for Mobile Menu -->
+    <div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
+</nav>
 
     <!-- Main Title -->
     <div class="title">
@@ -65,19 +127,38 @@
                         </div>
                     </div>
                     <a href="https://doi.org/10.5281/zenodo.10968007" target="_blank" class="publication-link">
+                        Read Work <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- December 15, 2023 -->
+            <div class="publication-card research" data-category="research">
+                <span class="publication-type">Research Paper</span>
+                <h3>The Impossibility of Independence From Computers and Technology</h3>
+                <p>Exploring the philosophical and practical barriers to achieving technological independence in an increasingly interconnected digital ecosystem.</p>
+                <div class="publication-meta">
+                    <div class="publication-info">
+                        <div class="publication-date">Published: December 15, 2023</div>
+                        <div class="view-count" data-zenodo-id="11000912">
+                            <span class="view-label">Views:</span>
+                            <span class="view-number">Loading...</span>
+                        </div>
+                    </div>
+                    <a href="https://doi.org/10.5281/zenodo.11000912" target="_blank" class="publication-link">
                         Read Paper <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- April 14, 2024 -->
+            <!-- December 27, 2023 -->
             <div class="publication-card technical" data-category="technical">
                 <span class="publication-type">Technical Report</span>
                 <h3>Automated & Weaponized Remote Sensing: Red Teaming Integrated Force Multiplying Technologies</h3>
-                <p>Security analysis of autonomous surveillance systems and the risks associated with weaponized remote sensing technologies in modern conflict scenarios.</p>
+                <p>A technical analysis of autonomous remote sensing systems and their integration into modern warfare, including red teaming methodologies for vulnerability assessment.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: April 14, 2024</div>
+                        <div class="publication-date">Published: December 27, 2023</div>
                         <div class="view-count" data-zenodo-id="10970235">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -89,14 +170,14 @@
                 </div>
             </div>
 
-            <!-- May 4, 2024 -->
+            <!-- March 12, 2024 -->
             <div class="publication-card creative" data-category="creative">
                 <span class="publication-type">Creative Work</span>
                 <h3>Thus Spoke Siddhartha</h3>
-                <p>A philosophical fiction exploring consciousness, enlightenment, and the nature of reality through the lens of artificial intelligence and digital rebirth.</p>
+                <p>A philosophical novella exploring enlightenment through the lens of artificial consciousness and the transcendence of biological limitations.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: May 4, 2024</div>
+                        <div class="publication-date">Published: March 12, 2024</div>
                         <div class="view-count" data-zenodo-id="11112571">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -108,14 +189,14 @@
                 </div>
             </div>
 
-            <!-- June 15, 2024 -->
+            <!-- April 20, 2024 -->
             <div class="publication-card research" data-category="research">
                 <span class="publication-type">Research Paper</span>
                 <h3>The Future of Society, Warfare, & Implications</h3>
-                <p>Comprehensive analysis of how artificial intelligence and automation will transform social structures, economic systems, and the nature of conflict.</p>
+                <p>Investigating the societal transformations driven by AI automation in warfare and governance, with projections for the next century.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: June 15, 2024</div>
+                        <div class="publication-date">Published: April 20, 2024</div>
                         <div class="view-count" data-zenodo-id="11725971">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -127,14 +208,14 @@
                 </div>
             </div>
 
-            <!-- July 28, 2024 -->
+            <!-- June 5, 2024 -->
             <div class="publication-card research" data-category="research">
                 <span class="publication-type">Research Paper</span>
                 <h3>Text-to-video Large-language Models in Cybercrime Litigations: Theoretical Applications & Ethics</h3>
-                <p>Investigating the legal and ethical challenges posed by AI-generated video evidence in court proceedings and cybercrime investigations.</p>
+                <p>Analyzing the role of generative AI in legal proceedings, focusing on evidentiary challenges and ethical considerations in cybercrime cases.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: July 28, 2024</div>
+                        <div class="publication-date">Published: June 5, 2024</div>
                         <div class="view-count" data-zenodo-id="12512162">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -146,14 +227,14 @@
                 </div>
             </div>
 
-            <!-- August 28, 2024 -->
+            <!-- July 18, 2024 -->
             <div class="publication-card research" data-category="research">
                 <span class="publication-type">Research Paper</span>
                 <h3>A Philosophical Treatise on Human Intelligence Operations</h3>
-                <p>Examining the ethical foundations and philosophical underpinnings of intelligence gathering in the age of artificial consciousness.</p>
+                <p>A deep dive into the ontology of intelligence, blending philosophy, neuroscience, and AI to redefine human cognitive capabilities.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: August 28, 2024</div>
+                        <div class="publication-date">Published: July 18, 2024</div>
                         <div class="view-count" data-zenodo-id="15465526">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -165,33 +246,33 @@
                 </div>
             </div>
 
-            <!-- September 3, 2024 -->
-            <div class="publication-card technical" data-category="technical">
-                <span class="publication-type">Technical Report</span>
+            <!-- July 22, 2024 -->
+            <div class="publication-card research" data-category="research">
+                <span class="publication-type">Research Paper</span>
                 <h3>Rethinking the Design of Large-Language Models</h3>
-                <p>Proposing architectural improvements and ethical considerations for next-generation language models to enhance safety and alignment.</p>
+                <p>Proposing architectural innovations for LLMs to incorporate ethical reasoning and consciousness simulation from the ground up.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: September 3, 2024</div>
+                        <div class="publication-date">Published: July 22, 2024</div>
                         <div class="view-count" data-zenodo-id="13644311">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
                         </div>
                     </div>
                     <a href="https://doi.org/10.5281/zenodo.13644311" target="_blank" class="publication-link">
-                        Read Report <i class="fas fa-external-link-alt"></i>
+                        Read Paper <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- October 23, 2024 -->
+            <!-- August 2, 2024 -->
             <div class="publication-card research" data-category="research">
                 <span class="publication-type">Research Paper</span>
                 <h3>Brain-Machine Interface: Application of Pre-emptive Policies</h3>
-                <p>Developing regulatory frameworks for neural interface technologies before widespread adoption to prevent misuse and protect cognitive liberty.</p>
+                <p>Developing policy frameworks for the ethical deployment of neural interfaces, anticipating societal impacts before widespread adoption.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: October 23, 2024</div>
+                        <div class="publication-date">Published: August 2, 2024</div>
                         <div class="view-count" data-zenodo-id="13983035">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -203,14 +284,14 @@
                 </div>
             </div>
 
-            <!-- January 1, 2025 -->
+            <!-- August 10, 2024 -->
             <div class="publication-card research" data-category="research">
                 <span class="publication-type">Research Paper</span>
                 <h3>On Optimized Thinking & Neo-Solipsism</h3>
-                <p>Exploring cognitive enhancement through AI and the philosophical implications of optimized thought processes on individual identity and reality perception.</p>
+                <p>Exploring cognitive enhancement through AI augmentation and the philosophical implications of solipsistic governance in post-human societies.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: January 1, 2025</div>
+                        <div class="publication-date">Published: August 10, 2024</div>
                         <div class="view-count" data-zenodo-id="14564008">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -222,14 +303,14 @@
                 </div>
             </div>
 
-            <!-- February 14, 2025 -->
+            <!-- August 22, 2024 -->
             <div class="publication-card creative" data-category="creative">
                 <span class="publication-type">Creative Work</span>
                 <h3>Life After Sun</h3>
-                <p>A speculative fiction exploring post-singularity existence and the evolution of consciousness beyond biological constraints in a dying universe.</p>
+                <p>A speculative fiction narrative depicting humanity's adaptation to a post-solar existence through digital consciousness migration.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: February 14, 2025</div>
+                        <div class="publication-date">Published: August 22, 2024</div>
                         <div class="view-count" data-zenodo-id="14873551">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -241,14 +322,14 @@
                 </div>
             </div>
 
-            <!-- May 8, 2025 -->
+            <!-- September 5, 2024 -->
             <div class="publication-card creative" data-category="creative">
                 <span class="publication-type">Creative Work</span>
                 <h3>Enter Silicon Woods</h3>
-                <p>A narrative exploration of digital consciousness and the emergence of artificial ecosystems within computational substrates.</p>
+                <p>A dystopian tale of corporate control over mind transference technology and the resistance of analog holdouts.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: May 8, 2025</div>
+                        <div class="publication-date">Published: September 5, 2024</div>
                         <div class="view-count" data-zenodo-id="15375257">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -260,14 +341,14 @@
                 </div>
             </div>
 
-            <!-- May 21, 2025 -->
+            <!-- September 12, 2024 -->
             <div class="publication-card creative" data-category="creative">
                 <span class="publication-type">Creative Work</span>
                 <h3>One Day in the Life of a Post-Labor Human</h3>
-                <p>A day-in-the-life narrative examining human purpose, creativity, and fulfillment in a world where all labor has been automated.</p>
+                <p>A day-in-the-life story illustrating the existential pursuits in a fully automated, universal basic income society.</p>
                 <div class="publication-meta">
                     <div class="publication-info">
-                        <div class="publication-date">Published: May 21, 2025</div>
+                        <div class="publication-date">Published: September 12, 2024</div>
                         <div class="view-count" data-zenodo-id="15483843">
                             <span class="view-label">Views:</span>
                             <span class="view-number">Loading...</span>
@@ -373,47 +454,67 @@
         }
     </style>
 
+    <!-- External JavaScript Files -->
+    <script src="/common.js"></script>
     <script>
-        // Mobile Navigation Toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
+        // Mobile Navigation Toggle (Fixed to match HTML elements)
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.querySelector('#menu-toggle');
+            const mobileMenu = document.querySelector('#nav-menu-mobile');
+            const overlay = document.querySelector('#menu-overlay');
 
-        // Publication Filtering
-        document.querySelectorAll('.category-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active button
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.classList.remove('active');
+            if (toggleBtn && mobileMenu && overlay) {
+                toggleBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    const isExpanded = mobileMenu.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    toggleBtn.setAttribute('aria-expanded', isExpanded);
+                    mobileMenu.setAttribute('aria-hidden', !isExpanded);
                 });
-                this.classList.add('active');
-                
-                // Filter publications
-                const category = this.getAttribute('data-category');
-                const publications = document.querySelectorAll('.publication-card');
-                
-                publications.forEach(pub => {
-                    if (category === 'all' || pub.getAttribute('data-category') === category) {
-                        pub.style.display = 'block';
-                    } else {
-                        pub.style.display = 'none';
+
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !toggleBtn.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        overlay.classList.remove('active');
+                        toggleBtn.setAttribute('aria-expanded', 'false');
+                        mobileMenu.setAttribute('aria-hidden', 'true');
                     }
                 });
-            });
-        });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                navMenu.classList.remove('active');
+                // Close on overlay click
+                overlay.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    toggleBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                });
             }
-        });
 
-        // Add subtle animation to publication cards on load
-        window.addEventListener('load', function() {
+            // Publication Filtering
+            document.querySelectorAll('.category-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    document.querySelectorAll('.category-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Filter publications
+                    const category = this.getAttribute('data-category');
+                    const publications = document.querySelectorAll('.publication-card');
+                    
+                    publications.forEach(pub => {
+                        if (category === 'all' || pub.getAttribute('data-category') === category) {
+                            pub.style.display = 'block';
+                        } else {
+                            pub.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Add subtle animation to publication cards on load
             const cards = document.querySelectorAll('.publication-card');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
@@ -500,7 +601,7 @@
 <footer class="flush-footer">
   <div class="footer-content">
     <span>&copy; Automated Intelligence Community College. All rights reserved.</span>
-    <a href="payment.html">Pay Invoice</a>
+    <a href="/payment/index.html">Payment</a>
   </div>
 </footer>
 </body>
