@@ -289,7 +289,7 @@
             function openMenu() {
                 mobileMenu.setAttribute('aria-hidden', 'false');
                 toggleBtn.setAttribute('aria-expanded', 'true');
-                toggleBtn.textContent = 'Close ↓';
+                toggleBtn.textContent = 'Close';
                 overlay.setAttribute('aria-hidden', 'false');
                 document.body.classList.add('menu-open');
             }
@@ -297,7 +297,7 @@
             function closeMenu() {
                 mobileMenu.setAttribute('aria-hidden', 'true');
                 toggleBtn.setAttribute('aria-expanded', 'false');
-                toggleBtn.textContent = 'MENU ↑';
+                toggleBtn.textContent = 'MENU';
                 overlay.setAttribute('aria-hidden', 'true');
                 document.body.classList.remove('menu-open');
             }
