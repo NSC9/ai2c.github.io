@@ -12,7 +12,6 @@ root/
 │   └── index.html          # Payment page
 ├── css/
 │   ├── main.css            # Main import file
-│   ├── styles.css          # Original styles (backup)
 │   ├── base/
 │   │   ├── reset.css
 │   │   ├── animations.css

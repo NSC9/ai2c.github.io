@@ -1,4 +1,4 @@
-<!-- Publications -->
+<!-- Publication -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,297 +104,383 @@
             <button class="category-btn" data-category="creative">Creative Works</button>
         </div>
 
-        <!-- Publications Grid -->
-        <div class="publications-grid">
-            <!-- Publications sorted chronologically -->
+        <!-- Horizontal Scrolling Publications -->
+        <div class="publications-scroll-container">
+            <div class="scroll-controls">
+                <button class="scroll-btn left" id="scroll-left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-btn right" id="scroll-right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
             
-            <!-- November 26, 2023 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>Human-Machine Interaction: Revealing Security Concerns Posed by Artificial Life</h3>
-                <p>Examining the cybersecurity implications of advanced AI systems and the vulnerabilities in human-machine interfaces that could be exploited by malicious artificial entities.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: November 26, 2023</div>
-                        <div class="view-count" data-zenodo-id="10968007">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+            <div class="publications-horizontal" id="publications-container">
+                <!-- Publications sorted chronologically -->
+                
+                <!-- November 26, 2023 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-shield-alt placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>Human-Machine Interaction: Revealing Security Concerns Posed by Artificial Life</h3>
+                        <p>Examining the cybersecurity implications of advanced AI systems and the vulnerabilities in human-machine interfaces that could be exploited by malicious artificial entities.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: November 26, 2023</div>
+                                <div class="view-count" data-zenodo-id="10968007">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.10968007" target="_blank" class="publication-link">
+                                Read Work <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.10968007" target="_blank" class="publication-link">
-                        Read Work <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- December 15, 2023 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>The Impossibility of Independence From Computers and Technology</h3>
-                <p>Exploring the philosophical and practical barriers to achieving technological independence in an increasingly interconnected digital ecosystem.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: December 15, 2023</div>
-                        <div class="view-count" data-zenodo-id="11000912">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- December 15, 2023 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-laptop-code placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>The Impossibility of Independence From Computers and Technology</h3>
+                        <p>Exploring the philosophical and practical barriers to achieving technological independence in an increasingly interconnected digital ecosystem.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: December 15, 2023</div>
+                                <div class="view-count" data-zenodo-id="11000912">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.11000912" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.11000912" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- December 27, 2023 -->
-            <div class="publication-card technical" data-category="technical">
-                <span class="publication-type">Technical Report</span>
-                <h3>Automated & Weaponized Remote Sensing: Red Teaming Integrated Force Multiplying Technologies</h3>
-                <p>A technical analysis of autonomous remote sensing systems and their integration into modern warfare, including red teaming methodologies for vulnerability assessment.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: December 27, 2023</div>
-                        <div class="view-count" data-zenodo-id="10970235">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- December 27, 2023 -->
+                <div class="publication-card technical" data-category="technical">
+                    <div class="publication-image">
+                        <i class="fas fa-crosshairs placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Technical Report</span>
+                        <h3>Automated & Weaponized Remote Sensing: Red Teaming Integrated Force Multiplying Technologies</h3>
+                        <p>A technical analysis of autonomous remote sensing systems and their integration into modern warfare, including red teaming methodologies for vulnerability assessment.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: December 27, 2023</div>
+                                <div class="view-count" data-zenodo-id="10970235">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.10970235" target="_blank" class="publication-link">
+                                Read Report <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.10970235" target="_blank" class="publication-link">
-                        Read Report <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- March 12, 2024 -->
-            <div class="publication-card creative" data-category="creative">
-                <span class="publication-type">Creative Work</span>
-                <h3>Thus Spoke Siddhartha</h3>
-                <p>A philosophical novella exploring enlightenment through the lens of artificial consciousness and the transcendence of biological limitations.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: March 12, 2024</div>
-                        <div class="view-count" data-zenodo-id="11112571">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- March 12, 2024 -->
+                <div class="publication-card creative" data-category="creative">
+                    <div class="publication-image">
+                        <i class="fas fa-book placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Creative Work</span>
+                        <h3>Thus Spoke Siddhartha</h3>
+                        <p>A philosophical novella exploring enlightenment through the lens of artificial consciousness and the transcendence of biological limitations.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: March 12, 2024</div>
+                                <div class="view-count" data-zenodo-id="11112571">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.11112571" target="_blank" class="publication-link">
+                                Read Work <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.11112571" target="_blank" class="publication-link">
-                        Read Work <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- April 20, 2024 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>The Future of Society, Warfare, & Implications</h3>
-                <p>Investigating the societal transformations driven by AI automation in warfare and governance, with projections for the next century.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: April 20, 2024</div>
-                        <div class="view-count" data-zenodo-id="11725971">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- April 20, 2024 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-robot placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>The Future of Society, Warfare, & Implications</h3>
+                        <p>Investigating the societal transformations driven by AI automation in warfare and governance, with projections for the next century.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: April 20, 2024</div>
+                                <div class="view-count" data-zenodo-id="11725971">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.11725971" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.11725971" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- June 5, 2024 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>Text-to-video Large-language Models in Cybercrime Litigations: Theoretical Applications & Ethics</h3>
-                <p>Analyzing the role of generative AI in legal proceedings, focusing on evidentiary challenges and ethical considerations in cybercrime cases.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: June 5, 2024</div>
-                        <div class="view-count" data-zenodo-id="12512162">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- June 5, 2024 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-gavel placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>Text-to-video Large-language Models in Cybercrime Litigations: Theoretical Applications & Ethics</h3>
+                        <p>Analyzing the role of generative AI in legal proceedings, focusing on evidentiary challenges and ethical considerations in cybercrime cases.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: June 5, 2024</div>
+                                <div class="view-count" data-zenodo-id="12512162">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.12512162" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.12512162" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- July 18, 2024 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>A Philosophical Treatise on Human Intelligence Operations</h3>
-                <p>A deep dive into the ontology of intelligence, blending philosophy, neuroscience, and AI to redefine human cognitive capabilities.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: July 18, 2024</div>
-                        <div class="view-count" data-zenodo-id="15465526">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- July 18, 2024 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-brain placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>A Philosophical Treatise on Human Intelligence Operations</h3>
+                        <p>A deep dive into the ontology of intelligence, blending philosophy, neuroscience, and AI to redefine human cognitive capabilities.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: July 18, 2024</div>
+                                <div class="view-count" data-zenodo-id="15465526">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.15465526" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.15465526" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- July 22, 2024 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>Rethinking the Design of Large-Language Models</h3>
-                <p>Proposing architectural innovations for LLMs to incorporate ethical reasoning and consciousness simulation from the ground up.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: July 22, 2024</div>
-                        <div class="view-count" data-zenodo-id="13644311">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- July 22, 2024 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-cogs placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>Rethinking the Design of Large-Language Models</h3>
+                        <p>Proposing architectural innovations for LLMs to incorporate ethical reasoning and consciousness simulation from the ground up.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: July 22, 2024</div>
+                                <div class="view-count" data-zenodo-id="13644311">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.13644311" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.13644311" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- August 2, 2024 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>Brain-Machine Interface: Application of Pre-emptive Policies</h3>
-                <p>Developing policy frameworks for the ethical deployment of neural interfaces, anticipating societal impacts before widespread adoption.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: August 2, 2024</div>
-                        <div class="view-count" data-zenodo-id="13983035">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- August 2, 2024 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-microchip placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>Brain-Machine Interface: Application of Pre-emptive Policies</h3>
+                        <p>Developing policy frameworks for the ethical deployment of neural interfaces, anticipating societal impacts before widespread adoption.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: August 2, 2024</div>
+                                <div class="view-count" data-zenodo-id="13983035">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.13983035" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.13983035" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- August 10, 2024 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>On Optimized Thinking & Neo-Solipsism</h3>
-                <p>Exploring cognitive enhancement through AI augmentation and the philosophical implications of solipsistic governance in post-human societies.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: August 10, 2024</div>
-                        <div class="view-count" data-zenodo-id="14564008">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- August 10, 2024 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-user-cog placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>On Optimized Thinking & Neo-Solipsism</h3>
+                        <p>Exploring cognitive enhancement through AI augmentation and the philosophical implications of solipsistic governance in post-human societies.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: August 10, 2024</div>
+                                <div class="view-count" data-zenodo-id="14564008">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.14564008" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.14564008" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- August 22, 2024 -->
-            <div class="publication-card creative" data-category="creative">
-                <span class="publication-type">Creative Work</span>
-                <h3>Life After Sun</h3>
-                <p>A speculative fiction narrative depicting humanity's adaptation to a post-solar existence through digital consciousness migration.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: August 22, 2024</div>
-                        <div class="view-count" data-zenodo-id="14873551">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- August 22, 2024 -->
+                <div class="publication-card creative" data-category="creative">
+                    <div class="publication-image">
+                        <i class="fas fa-sun placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Creative Work</span>
+                        <h3>Life After Sun</h3>
+                        <p>A speculative fiction narrative depicting humanity's adaptation to a post-solar existence through digital consciousness migration.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: August 22, 2024</div>
+                                <div class="view-count" data-zenodo-id="14873551">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.14873551" target="_blank" class="publication-link">
+                                Read Work <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.14873551" target="_blank" class="publication-link">
-                        Read Work <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- September 5, 2024 -->
-            <div class="publication-card creative" data-category="creative">
-                <span class="publication-type">Creative Work</span>
-                <h3>Enter Silicon Woods</h3>
-                <p>A dystopian tale of corporate control over mind transference technology and the resistance of analog holdouts.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: September 5, 2024</div>
-                        <div class="view-count" data-zenodo-id="15375257">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- September 5, 2024 -->
+                <div class="publication-card creative" data-category="creative">
+                    <div class="publication-image">
+                        <i class="fas fa-tree placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Creative Work</span>
+                        <h3>Enter Silicon Woods</h3>
+                        <p>A dystopian tale of corporate control over mind transference technology and the resistance of analog holdouts.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: September 5, 2024</div>
+                                <div class="view-count" data-zenodo-id="15375257">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.15375257" target="_blank" class="publication-link">
+                                Read Work <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.15375257" target="_blank" class="publication-link">
-                        Read Work <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- September 12, 2024 -->
-            <div class="publication-card creative" data-category="creative">
-                <span class="publication-type">Creative Work</span>
-                <h3>One Day in the Life of a Post-Labor Human</h3>
-                <p>A day-in-the-life story illustrating the existential pursuits in a fully automated, universal basic income society.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: September 12, 2024</div>
-                        <div class="view-count" data-zenodo-id="15483843">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- September 12, 2024 -->
+                <div class="publication-card creative" data-category="creative">
+                    <div class="publication-image">
+                        <i class="fas fa-user-clock placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Creative Work</span>
+                        <h3>One Day in the Life of a Post-Labor Human</h3>
+                        <p>A day-in-the-life story illustrating the existential pursuits in a fully automated, universal basic income society.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: September 12, 2024</div>
+                                <div class="view-count" data-zenodo-id="15483843">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.15483843" target="_blank" class="publication-link">
+                                Read Work <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.15483843" target="_blank" class="publication-link">
-                        Read Work <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- August 15, 2025 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>Regarding Power Dynamics For Post-Biology Worlds</h3>
-                <p>Analyzing political structures and power distribution in civilizations where biological constraints no longer limit individual capabilities or lifespans.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: August 15, 2025</div>
-                        <div class="view-count" data-zenodo-id="16884689">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- August 15, 2025 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-chess-queen placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>Regarding Power Dynamics For Post-Biology Worlds</h3>
+                        <p>Analyzing political structures and power distribution in civilizations where biological constraints no longer limit individual capabilities or lifespans.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: August 15, 2025</div>
+                                <div class="view-count" data-zenodo-id="16884689">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.16884689" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.16884689" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
-            </div>
 
-            <!-- October 13, 2025 -->
-            <div class="publication-card research" data-category="research">
-                <span class="publication-type">Research Paper</span>
-                <h3>Thesis on Human Nature</h3>
-                <p>A comprehensive examination of what constitutes human nature in an age where artificial intelligence challenges traditional definitions of consciousness and identity.</p>
-                <div class="publication-meta">
-                    <div class="publication-info">
-                        <div class="publication-date">Published: October 13, 2025</div>
-                        <div class="view-count" data-zenodo-id="17336784">
-                            <span class="view-label">Views:</span>
-                            <span class="view-number">Loading...</span>
+                <!-- October 13, 2025 -->
+                <div class="publication-card research" data-category="research">
+                    <div class="publication-image">
+                        <i class="fas fa-user placeholder-icon"></i>
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Research Paper</span>
+                        <h3>Thesis on Human Nature</h3>
+                        <p>A comprehensive examination of what constitutes human nature in an age where artificial intelligence challenges traditional definitions of consciousness and identity.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: October 13, 2025</div>
+                                <div class="view-count" data-zenodo-id="17336784">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.17336784" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <a href="https://doi.org/10.5281/zenodo.17336784" target="_blank" class="publication-link">
-                        Read Paper <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Publication Stats - CORRECTED COUNTS -->
+        <!-- Publication Stats -->
         <section class="publication-stats">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -416,38 +502,6 @@
             </div>
         </section>
     </div>
-
-    <style>
-        .publication-info {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        
-        .view-count {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9em;
-            color: #b3b3b3;
-        }
-        
-        .view-label {
-            color: #66b3ff;
-            font-weight: 500;
-        }
-        
-        .view-number {
-            color: #fff;
-            font-weight: 400;
-        }
-        
-        .publication-date {
-            color: #66b3ff;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-    </style>
 
     <!-- External JavaScript Files -->
     <script src="/common.js"></script>
@@ -478,7 +532,7 @@
                 });
 
                 // Close on overlay click
-                overlay.addEventListener('click', function() {
+                overlay.addEventListener('click',                overlay.addEventListener('click', function() {
                     mobileMenu.classList.remove('active');
                     overlay.classList.remove('active');
                     toggleBtn.setAttribute('aria-expanded', 'false');
@@ -509,18 +563,65 @@
                 });
             });
 
-            // Add subtle animation to publication cards on load
-            const cards = document.querySelectorAll('.publication-card');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
+            // Horizontal Scrolling with Loop
+            const scrollContainer = document.querySelector('.publications-horizontal');
+            const scrollLeftBtn = document.getElementById('scroll-left');
+            const scrollRightBtn = document.getElementById('scroll-right');
+            const cardWidth = 320; // Match the min-width of publication cards
+            const gap = 25; // Match the gap between cards
+
+            if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+                scrollLeftBtn.addEventListener('click', () => {
+                    scrollContainer.scrollBy({
+                        left: -(cardWidth + gap),
+                        behavior: 'smooth'
+                    });
+                });
+
+                scrollRightBtn.addEventListener('click', () => {
+                    scrollContainer.scrollBy({
+                        left: cardWidth + gap,
+                        behavior: 'smooth'
+                    });
+                });
+
+                // Auto-scroll loop
+                let autoScroll = setInterval(() => {
+                    if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
+                        // If at the end, scroll to beginning
+                        scrollContainer.scrollTo({
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        scrollContainer.scrollBy({
+                            left: cardWidth + gap,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 5000); // Scroll every 5 seconds
+
+                // Pause auto-scroll on hover
+                scrollContainer.addEventListener('mouseenter', () => {
+                    clearInterval(autoScroll);
+                });
+
+                scrollContainer.addEventListener('mouseleave', () => {
+                    autoScroll = setInterval(() => {
+                        if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
+                            scrollContainer.scrollTo({
+                                left: 0,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            scrollContainer.scrollBy({
+                                left: cardWidth + gap,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 5000);
+                });
+            }
 
             // Load view counts for all publications
             loadViewCounts();
@@ -549,11 +650,8 @@
             }
         }
 
-        // Function to fetch views from Zenodo API - Improved version
+        // Function to fetch views from Zenodo API
         async function fetchZenodoViews(zenodoId) {
-            // Try multiple approaches to get the view count
-            
-            // Approach 1: Direct record API
             const apiUrl = `https://zenodo.org/api/records/${zenodoId}`;
             
             try {
@@ -565,30 +663,22 @@
                 
                 const data = await response.json();
                 
-                // Check for view count in different possible locations
                 let views = 0;
                 
-                // Try stats.views first
                 if (data.stats && data.stats.views !== undefined) {
                     views = data.stats.views;
                 }
-                // Try metrics.views if available
                 else if (data.metrics && data.metrics.views !== undefined) {
                     views = data.metrics.views;
                 }
-                // Some Zenodo records have it in a different location
                 else if (data.views !== undefined) {
                     views = data.views;
                 }
                 
-                console.log(`Zenodo ID ${zenodoId}:`, data.stats, data.metrics);
                 return views;
                 
             } catch (error) {
                 console.error(`API fetch failed for ${zenodoId}:`, error);
-                
-                // Fallback: Use a proxy or alternative method
-                // For now, we'll return 0 and let the error handling show "N/A"
                 throw error;
             }
         }
