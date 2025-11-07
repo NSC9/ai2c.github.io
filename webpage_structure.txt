@@ -25,7 +25,7 @@ root/
 │   │   └── forms.css
 │   ├── pages/
 │   │   ├── faculty.css
-│   │   ├── publications.css
+│   │   ├── publications.css   (this still affects root index.html because legacy)
 │   │   ├── contact.css
 │   │   └── payment.css
 │   └── utilities/

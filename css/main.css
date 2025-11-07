@@ -118,6 +118,11 @@
     color: #fff !important;
 }
 
+.nav-full-name {
+    font-size: 0.9rem !important;  /* ← This line sets the size */
+    font-weight: 500 !important;
+}
+
 .nav-menu a {
     color: #fff !important;
 }
@@ -775,3 +780,4 @@ html, body {
     font-size: 1rem !important;
     font-weight: 500 !important;
 }
+

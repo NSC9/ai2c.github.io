@@ -583,22 +583,71 @@
                     });
                 });
 
-                // Auto-scroll loop
-                let autoScroll = setInterval(() => {
-                    if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
-                        // If at the end, scroll to beginning
-                        scrollContainer.scrollTo({
-                            left: 0,
-                            behavior: 'smooth'
-                        });
-                    } else {
-                        scrollContainer.scrollBy({
-                            left: cardWidth + gap,
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 5000); // Scroll every 5 seconds
+			// Robust Horizontal Scrolling with Manual Controls
+			document.addEventListener('DOMContentLoaded', function() {
+				const scrollContainer = document.querySelector('.publications-horizontal');
+				const scrollLeftBtn = document.getElementById('scroll-left');
+				const scrollRightBtn = document.getElementById('scroll-right');
+				
+				if (!scrollContainer || !scrollLeftBtn || !scrollRightBtn) {
+					console.log('Scroll elements not found');
+					return;
+				}
 
+				const cardWidth = 320;
+				const gap = 25;
+				const scrollAmount = cardWidth + gap;
+
+				// Left scroll button
+				scrollLeftBtn.addEventListener('click', function() {
+					console.log('Left arrow clicked');
+					scrollContainer.scrollBy({
+						left: -scrollAmount,
+						behavior: 'smooth'
+					});
+				});
+
+				// Right scroll button
+				scrollRightBtn.addEventListener('click', function() {
+					console.log('Right arrow clicked');
+					scrollContainer.scrollBy({
+						left: scrollAmount,
+						behavior: 'smooth'
+					});
+				});
+
+				// Update arrow states based on scroll position
+				function updateScrollButtons() {
+					const scrollLeft = scrollContainer.scrollLeft;
+					const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+					
+					// Left button
+					if (scrollLeft <= 10) {
+						scrollLeftBtn.style.opacity = '0.3';
+						scrollLeftBtn.style.cursor = 'not-allowed';
+					} else {
+						scrollLeftBtn.style.opacity = '1';
+						scrollLeftBtn.style.cursor = 'pointer';
+					}
+					
+					// Right button
+					if (scrollLeft >= maxScrollLeft - 10) {
+						scrollRightBtn.style.opacity = '0.3';
+						scrollRightBtn.style.cursor = 'not-allowed';
+					} else {
+						scrollRightBtn.style.opacity = '1';
+						scrollRightBtn.style.cursor = 'pointer';
+					}
+				}
+
+				// Update on scroll
+				scrollContainer.addEventListener('scroll', updateScrollButtons);
+				
+				// Initial update
+				updateScrollButtons();
+				
+				console.log('Scroll controls initialized');
+			});
                 // Pause auto-scroll on hover
                 scrollContainer.addEventListener('mouseenter', () => {
                     clearInterval(autoScroll);
