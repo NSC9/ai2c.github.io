@@ -263,7 +263,7 @@
                 <!-- July 18, 2024 -->
                 <div class="publication-card research" data-category="research">
                     <div class="publication-image">
-                        <i class="fas fa-brain placeholder-icon"></i>
+                        <img src="https://github.com/NSC9/ai2c.github.io/blob/main/images/humint.png?raw=true" alt="A Philosophical Treatise on Human Intelligence Operation">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Research Paper</span>
@@ -335,7 +335,7 @@
                 <!-- August 10, 2024 -->
                 <div class="publication-card research" data-category="research">
                     <div class="publication-image">
-                        <i class="fas fa-user-cog placeholder-icon"></i>
+                        <img src="https://github.com/NSC9/ai2c.github.io/blob/main/images/neosolipsism.png?raw=true" alt="On Optimized Thinking & Neo-Solipsism">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Research Paper</span>
@@ -359,7 +359,7 @@
                 <!-- August 22, 2024 -->
                 <div class="publication-card creative" data-category="creative">
                     <div class="publication-image">
-                        <i class="fas fa-sun placeholder-icon"></i>
+						<img src="https://github.com/NSC9/ai2c.github.io/blob/main/images/lifeaftersun.png?raw=true" alt="Life After Sun">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Creative Work</span>
@@ -383,7 +383,7 @@
                 <!-- September 5, 2024 -->
                 <div class="publication-card creative" data-category="creative">
                     <div class="publication-image">
-                        <i class="fas fa-tree placeholder-icon"></i>
+						<img src="https://github.com/NSC9/ai2c.github.io/blob/main/images/entersiliconwoods.jpg?raw=true" alt="Enter Silicon Woods">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Creative Work</span>
@@ -407,7 +407,7 @@
                 <!-- September 12, 2024 -->
                 <div class="publication-card creative" data-category="creative">
                     <div class="publication-image">
-                        <i class="fas fa-user-clock placeholder-icon"></i>
+                        <img src="https://github.com/NSC9/ai2c.github.io/blob/main/images/dayinthelife.png?raw=true" alt="One Day in the Life of a Post-Labor Human">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Creative Work</span>
@@ -431,7 +431,7 @@
                 <!-- August 15, 2025 -->
                 <div class="publication-card research" data-category="research">
                     <div class="publication-image">
-                        <i class="fas fa-chess-queen placeholder-icon"></i>
+                        <img src="https://github.com/NSC9/ai2c.github.io/blob/main/images/pwoerdynamics.png?raw=true" alt="Regarding Power Dynamics For Post-Biology Worlds">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Research Paper</span>
@@ -455,7 +455,7 @@
                 <!-- October 13, 2025 -->
                 <div class="publication-card research" data-category="research">
                     <div class="publication-image">
-                        <i class="fas fa-user placeholder-icon"></i>
+                        <img src="https://github.com/NSC9/ai2c.github.io/blob/main/images/humannature.jpg?raw=true" alt="Thesis on Human Nature">
                     </div>
                     <div class="publication-content">
                         <span class="publication-type">Research Paper</span>
@@ -561,57 +561,28 @@
                 });
             });
 
-            // Horizontal Scrolling with Loop
-            const scrollContainer = document.querySelector('.publications-horizontal');
-            const scrollLeftBtn = document.getElementById('scroll-left');
-            const scrollRightBtn = document.getElementById('scroll-right');
-            const cardWidth = 320; // Match the min-width of publication cards
-            const gap = 25; // Match the gap between cards
+			// Horizontal Scrolling with Manual Controls Only
+			const scrollContainer = document.querySelector('.publications-horizontal');
+			const scrollLeftBtn = document.getElementById('scroll-left');
+			const scrollRightBtn = document.getElementById('scroll-right');
+			const cardWidth = 320;
+			const gap = 25;
 
-            if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
-                scrollLeftBtn.addEventListener('click', () => {
-                    scrollContainer.scrollBy({
-                        left: -(cardWidth + gap),
-                        behavior: 'smooth'
-                    });
-                });
-
-                scrollRightBtn.addEventListener('click', () => {
-                    scrollContainer.scrollBy({
-                        left: cardWidth + gap,
-                        behavior: 'smooth'
-                    });
-                });
-
-			// Robust Horizontal Scrolling with Manual Controls
-			document.addEventListener('DOMContentLoaded', function() {
-				const scrollContainer = document.querySelector('.publications-horizontal');
-				const scrollLeftBtn = document.getElementById('scroll-left');
-				const scrollRightBtn = document.getElementById('scroll-right');
-				
-				if (!scrollContainer || !scrollLeftBtn || !scrollRightBtn) {
-					console.log('Scroll elements not found');
-					return;
-				}
-
-				const cardWidth = 320;
-				const gap = 25;
-				const scrollAmount = cardWidth + gap;
-
-				// Left scroll button
-				scrollLeftBtn.addEventListener('click', function() {
+			if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+				// Left scroll button - ONLY ONCE
+				scrollLeftBtn.addEventListener('click', () => {
 					console.log('Left arrow clicked');
 					scrollContainer.scrollBy({
-						left: -scrollAmount,
+						left: -(cardWidth + gap),
 						behavior: 'smooth'
 					});
 				});
 
-				// Right scroll button
-				scrollRightBtn.addEventListener('click', function() {
+				// Right scroll button - ONLY ONCE  
+				scrollRightBtn.addEventListener('click', () => {
 					console.log('Right arrow clicked');
 					scrollContainer.scrollBy({
-						left: scrollAmount,
+						left: cardWidth + gap,
 						behavior: 'smooth'
 					});
 				});
@@ -646,29 +617,13 @@
 				// Initial update
 				updateScrollButtons();
 				
+				// KILL AUTO-SCROLL
+				for (let i = 1; i < 1000; i++) {
+					clearInterval(i);
+				}
+				
 				console.log('Scroll controls initialized');
-			});
-                // Pause auto-scroll on hover
-                scrollContainer.addEventListener('mouseenter', () => {
-                    clearInterval(autoScroll);
-                });
-
-                scrollContainer.addEventListener('mouseleave', () => {
-                    autoScroll = setInterval(() => {
-                        if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
-                            scrollContainer.scrollTo({
-                                left: 0,
-                                behavior: 'smooth'
-                            });
-                        } else {
-                            scrollContainer.scrollBy({
-                                left: cardWidth + gap,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }, 5000);
-                });
-            }
+			}
 
             // Load view counts for all publications
             loadViewCounts();
