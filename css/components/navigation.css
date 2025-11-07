@@ -44,9 +44,9 @@
     background: rgba(0,115,230,0.2); 
 }
 
-.nav-menu a.active { 
-    color: #fff; 
-    background: rgba(0,115,230,0.3); 
+.nav-menu a.active {
+    color: #fff;
+    background: rgba(0,115,230,0.3);  /* Light blue tint (alpha 0.3 for transparency) */
 }
 
 .hamburger { 

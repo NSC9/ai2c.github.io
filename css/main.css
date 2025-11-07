@@ -92,11 +92,6 @@
     background: rgba(0,115,230,0.2);
 }
 
-.nav-menu a.active {
-    color: #fff;
-    background: rgba(0,115,230,0.3);
-}
-
 /* Hamburger */
 .hamburger {
     display: none;
@@ -720,4 +715,63 @@ html, body {
     padding: 0 20px;
     box-sizing: border-box;
 }
+/* REPLACE the existing rules at the BOTTOM of main.css with these: */
 
+/* Force larger social media icons by overriding inline SVG dimensions */
+.desktop-social .social-icon svg {
+    width: 35px !important;
+    height: 35px !important;
+}
+
+.mobile-social-links .social-icon svg {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+/* Increase button size and spacing for social icons */
+.social-icon {
+    width: 5px !important;
+    height: 5px !important;
+}
+
+.desktop-social {
+    gap: 80px !important;
+    margin-left: auto !important;
+    padding-left: 30px !important;
+}
+
+.mobile-social-links {
+    gap: 15px !important;
+}
+
+/* INCREASE NAV MENU BUTTON SIZE */
+.nav-menu a {
+    font-size: 1.3em !important;
+    padding: 12px 18px !important;
+}
+
+.nav-menu-desktop a {
+    font-size: 1.3em !important;
+    padding: 10px 10px !important;
+}
+.publication-categories {
+    display: none !important;
+}
+/* Make scroll arrows much smaller */
+.scroll-btn {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.scroll-btn i {
+    font-size: 0.7rem !important;
+}
+/* Larger version */
+.nav-logo {
+    font-size: 2.5em !important;
+}
+
+.nav-full-name {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+}

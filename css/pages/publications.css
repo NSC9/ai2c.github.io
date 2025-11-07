@@ -1,8 +1,8 @@
 /* publications.css - Publications page styles */
 .publications-header { 
     text-align: center; 
-    margin-bottom: 50px; 
-    padding: 30px; 
+    margin-bottom: 5px !important; /* Change from 50px to 30px or less */
+    padding: 40px; 
     background: linear-gradient(135deg,#0a0a0a,#1a1a1a); 
     border-radius: 15px; 
     border: 1px solid rgba(255,255,255,0.1); 
@@ -12,14 +12,19 @@
     font: 300 2.5em/1 Arial; 
     color: #fff; 
     margin-bottom: 20px; 
+    width: 100% !important; /* Make it span full width */
+    padding: 0 30px !important; /* Add horizontal padding */
+    box-sizing: border-box !important; /* Include padding in width */
 }
 
 .publications-header p { 
     font-size: 1.3em; 
     color: #b3b3b3; 
-    max-width: 800px; 
+    max-width: 100% !important; /* Change from 800px to 100% */
     margin: 0 auto; 
     line-height: 1.6; 
+    padding: 0 5px; /* Add horizontal padding */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .publication-categories { 
@@ -545,4 +550,12 @@
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}
+/* Decrease padding around horizontal scrolling cards */
+.publications-horizontal {
+    padding: 0px 0px !important; /* Reduced from 20px 10px */
+}
+
+.publications-scroll-container {
+    margin-bottom: 30px !important; /* Reduced from 50px if needed */
 }
