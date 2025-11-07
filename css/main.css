@@ -792,3 +792,119 @@ html, body {
 .name-line {
     line-height: 1.4;
 }
+
+/* Enhanced Full-Page Blue Wallpaper Blend - Stretches from Nav to Footer */
+body {
+    background: linear-gradient(to bottom, 
+        #000 0%,                    /* Matches nav top */
+        #1a1a2e 10%,                /* Nav body fade */
+        #0a2540 50%,                /* Mid-page cool blue depth */
+        #000 100%                   /* Footer black anchor */
+    ) !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* Subtle Left-Side Vertical Accent Stripe - Full Page Height, Blends with Nav */
+body::before {
+    content: '' !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 6px !important;
+    background: linear-gradient(to bottom, 
+        rgba(0, 115, 230, 0.8) 0%,  /* Strong tie to nav border */
+        rgba(0, 115, 230, 0.4) 30%, /* Fade mid-page */
+        rgba(0, 115, 230, 0.1) 70%, /* Subtle near footer */
+        transparent 100%             /* Blends into footer */
+    ) !important;
+    z-index: -1 !important;  /* Behind everything */
+    border-radius: 0 3px 3px 0 !important;  /* Soft right curve */
+    box-shadow: 0 0 20px rgba(0, 115, 230, 0.2) !important;  /* Gentle glow for immersion */
+}
+
+/* Footer Blend: Soften Transition */
+.flush-footer {
+    background: linear-gradient(to top, 
+        transparent 0%,             /* Picks up body fade */
+        #000 20%                    /* Solid black base */
+    ) !important;
+    border-top: 1px solid rgba(0, 115, 230, 0.1) !important;  /* Subtle blue echo */
+    color: #b3b3b3 !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+}
+
+.footer-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.footer-content a {
+    color: #66b3ff !important;  /* Lighter blue link for harmony */
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+.footer-content a:hover {
+    color: #0073e6 !important;  /* Match nav accent */
+}
+
+/* Tie Card Stripes to Page Accent - Softer, Blended Width */
+.publications-scroll-container .publication-card.research::before,
+.publications-scroll-container .publication-card.technical::before,
+.publications-scroll-container .publication-card.creative::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 4px !important;  /* Thinner for subtlety */
+    z-index: 0 !important;
+    border-radius: 15px 0 0 15px !important;
+    box-shadow: none !important;  /* Remove card glow; let page handle */
+    opacity: 0.7 !important;  /* Blend softer */
+}
+
+.publications-scroll-container .publication-card.research::before {
+    background: linear-gradient(to bottom, #0073e6 0%, rgba(0, 115, 230, 0.6) 100%) !important;
+}
+
+.publications-scroll-container .publication-card.technical::before {
+    background: linear-gradient(to bottom, #00cc88 0%, rgba(0, 204, 136, 0.6) 100%) !important;
+}
+
+.publications-scroll-container .publication-card.creative::before {
+    background: linear-gradient(to bottom, #ff00aa 0%, rgba(255, 0, 170, 0.6) 100%) !important;
+}
+
+/* Image Blend: Softer Edge to Match Page Flow */
+.publications-scroll-container .publication-image {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-left: -30px !important;
+    padding-left: 4px !important;
+    background: linear-gradient(135deg, 
+        rgba(17, 34, 64, 0.9) 0%,   /* Softer blue-gray, semi-transparent */
+        rgba(35, 53, 84, 0.9) 100%  /* Blends with body */
+    ) !important;
+    border-left: 4px solid transparent !important;
+}
+
+.publications-scroll-container .publication-card.research .publication-image {
+    border-left-color: rgba(0, 115, 230, 0.3) !important;  /* Faint blue continuation */
+}
+
+/* Hover: Gentle Pulse Tied to Page Accent */
+.publications-scroll-container .publication-card:hover::before {
+    width: 6px !important;
+    opacity: 1 !important;
+    transition: all 0.4s ease !important;  /* Slower for immersion */
+}
