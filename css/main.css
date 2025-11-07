@@ -776,8 +776,19 @@ html, body {
     font-size: 2.5em !important;
 }
 
+/* Make nav full name bigger on desktop */
 .nav-full-name {
-    font-size: 1rem !important;
+    font-size: 1.3rem !important; /* Larger on desktop */
     font-weight: 500 !important;
 }
 
+/* Keep original smaller size on mobile */
+@media (max-width: 900px) {
+    .nav-full-name {
+        font-size: 0.7rem !important; /* Keep mobile size the same */
+    }
+}
+
+.name-line {
+    line-height: 1.4;
+}
