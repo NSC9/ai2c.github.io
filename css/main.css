@@ -302,7 +302,7 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 75% !important;  /* Or 350px; adjust as needed */
     height: 100vh;
     background-color: #0A2540;
     padding: 5rem 1rem 1rem;
