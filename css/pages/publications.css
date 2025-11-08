@@ -586,8 +586,8 @@
 }
 
 .publication-image {
-    margin: -10px -20px 15px -20px !important; /* Negative margins to bleed to edges */
-    width: calc(100% + 40px) !important;
+    margin: -35px -20px 15px -20px !important; /* Negative margins to bleed to edges */
+    width: calc(100% + 60px) !important;
     border-radius: 8px 8px 0 0 !important; /* Only round top corners */
 }
 
@@ -598,4 +598,7 @@
 	transform: scale(1.0) !important; /* 80% size = zoomed out */
     transform-origin: center center !important;
 	transform: translateY(0px) !important;
+}
+.publication-type {
+    margin-bottom: 0px !important; /* Reduced from 15px */
 }
