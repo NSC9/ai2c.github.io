@@ -559,3 +559,43 @@
 .publications-scroll-container {
     margin-bottom: 30px !important; /* Reduced from 50px if needed */
 }
+/* Add to publications.css */
+.publication-image {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-left: 0 !important; /* Remove negative margin */
+    margin-right: 0 !important;
+    padding-left: 0 !important; /* Remove padding */
+    background: transparent !important; /* Remove background gradient */
+    border-left: none !important; /* Remove border */
+    overflow: hidden; /* Contain the image */
+    border-radius: 8px;
+}
+
+.publication-image img {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block;
+    transform: none !important; /* Reset any transforms */
+}
+/* Add to publications.css */
+.publication-card {
+    padding: 45px !important; /* Reduced from 30px */
+}
+
+.publication-image {
+    margin: -10px -20px 15px -20px !important; /* Negative margins to bleed to edges */
+    width: calc(100% + 40px) !important;
+    border-radius: 8px 8px 0 0 !important; /* Only round top corners */
+}
+
+.publication-image img {
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover !important;
+	transform: scale(1.0) !important; /* 80% size = zoomed out */
+    transform-origin: center center !important;
+	transform: translateY(0px) !important;
+}
