@@ -934,3 +934,12 @@ body::before {
     animation: none !important;
     text-shadow: none !important;
 }
+
+/* Increase padding between publications and stats */
+.publications-scroll-container {
+    margin-bottom: 20px !important;
+}
+
+.publication-stats {
+    margin-top: 10px !important;
+}
