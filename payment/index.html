@@ -35,21 +35,81 @@
 
     <
     <!-- Navigation -->
-	<nav class="main-nav">
+	<nav class="main-nav" role="navigation" aria-label="Main navigation">
 		<div class="nav-container">
-			<a href="/" class="nav-logo">AI2C</a>
-           <a href="/" class="nav-full-name" style="text-decoration: none; color: inherit;">
-				<div class="name-line">AUTOMATED</div>
-				<div class="name-line">INTELLIGENCE</div>
-				<div class="name-line">COMMUNITY</div>
-				<div class="name-line">COLLEGE</div>
-			</a>
-			<div class="hamburger">
-				<span></span>
-				<span></span>
-				<span></span>
+			<!-- Logo + Name Block -->
+			<div class="nav-logo-container">
+				<a href="/" class="nav-logo" aria-label="AI2C Home">AI2C</a>
+			   <a href="/" class="nav-full-name" style="text-decoration: none; color: inherit;">
+					<div class="name-line">AUTOMATED</div>
+					<div class="name-line">INTELLIGENCE</div>
+					<div class="name-line">COMMUNITY</div>
+					<div class="name-line">COLLEGE</div>
+				</a>
+			</div>
+
+			<!-- Desktop Menu (Hidden on Mobile) -->
+			<div class="nav-menu-desktop">
+				<a href="/"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
+				<a href="/about/"><i class="fas fa-info-circle" aria-hidden="true"></i><span>About</span></a>
+				<a href="/faculty/"><i class="fas fa-user-graduate" aria-hidden="true"></i><span>Faculty</span></a>
+				<a href="/contact/"><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a>
+				<!-- Social Icons Wrapped for Right Alignment (SVG for Reliability, No Text, Small Logos) -->
+				<div class="desktop-social">
+					<a href="https://youtube.com/@ai2c" target="_blank" aria-label="YouTube" class="social-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+							<path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+						</svg>
+					</a>
+					<a href="https://x.com/AI2C__" target="_blank" aria-label="X (Twitter)" class="social-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+							<path d="M9.5,6.8l5.8-6.2h-1.4l-5,5.4l-4-5.4H0l6.2,8.2L0,15.5h1.4l5.4-5.9l4.4,5.9H16L9.5,6.8z M2.1,1.6h2.2l9.7,12.9h-2.2L2.1,1.6z"/>
+						</svg>
+					</a>
+					<a href="https://github.com/NSC9/" target="_blank" aria-label="GitHub" class="social-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+							<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<!-- Mobile Menu Toggle Button -->
+			<button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu-mobile">
+				MENU
+			</button>
+		</div>
+
+		<!-- Mobile Off-Canvas Menu (Hidden by Default) -->
+		<div id="nav-menu-mobile" class="nav-menu-mobile" role="menu" aria-hidden="true">
+			<ul class="nav-menu-list">
+				<li role="menuitem"><a href="/"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a></li>
+				<li role="menuitem"><a href="/about/"><i class="fas fa-info-circle" aria-hidden="true"></i><span>Mission</span></a></li>
+				<li role="menuitem"><a href="/faculty/"><i class="fas fa-user-graduate" aria-hidden="true"></i><span>Faculty</span></a></li>
+				<li role="menuitem"><a href="/contact/"><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a></li>
+			</ul>
+			<!-- Social Icons Tied to Bottom, Right-Aligned (SVG for Reliability, No Text, Small Logos) -->
+			<div class="mobile-social-links">
+				<a href="https://youtube.com/@ai2c" target="_blank" aria-label="YouTube" class="social-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+						<path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+					</svg>
+				</a>
+				<a href="https://x.com/AI2C__" target="_blank" aria-label="X (Twitter)" class="social-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+						<path d="M9.5,6.8l5.8-6.2h-1.4l-5,5.4l-4-5.4H0l6.2,8.2L0,15.5h1.4l5.4-5.9l4.4,5.9H16L9.5,6.8z M2.1,1.6h2.2l9.7,12.9h-2.2L2.1,1.6z"/>
+					</svg>
+				</a>
+				<a href="https://github.com/NSC9/" target="_blank" aria-label="GitHub" class="social-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+						<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+					</svg>
+				</a>
 			</div>
 		</div>
+
+		<!-- Overlay for Mobile Menu -->
+		<div id="menu-overlay" class="menu-overlay" aria-hidden="true"></div>
 	</nav>
 
     <div class="container">
@@ -103,23 +163,45 @@
             </div>
         </section>
     </div>
+<!-- External JavaScript Files -->
+<script src="/common.js"></script>
+<script>
+    // Mobile Navigation Toggle (same as publications page)
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.querySelector('#menu-toggle');
+        const mobileMenu = document.querySelector('#nav-menu-mobile');
+        const overlay = document.querySelector('#menu-overlay');
 
+        if (toggleBtn && mobileMenu && overlay) {
+            toggleBtn.addEventListener('click', function(event) {
+                event.stopPropagation();
+                const isExpanded = mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                toggleBtn.setAttribute('aria-expanded', isExpanded);
+                mobileMenu.setAttribute('aria-hidden', !isExpanded);
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !toggleBtn.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    toggleBtn.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                }
+            });
+
+            // Close on overlay click
+            overlay.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+            });
+        }
+    });
+</script>
     <script>
-        // Mobile Navigation Toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const navMenu = document.querySelector('.nav-menu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                navMenu.classList.remove('active');
-            }
-        });
-
         // Update amount display
         document.getElementById('amount').addEventListener('input', function() {
             document.getElementById('amount-display').textContent = '$' + this.value;
