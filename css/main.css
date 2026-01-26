@@ -150,7 +150,7 @@
 
     /* Prevent logo area from taking too much width */
     .nav-logo-container {
-        max-width: 60%;
+        max-width: 50%;
     }
 
     /* Menu collapses under logo + hamburger */
