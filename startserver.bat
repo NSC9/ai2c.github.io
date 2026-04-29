@@ -23,7 +23,7 @@ REM ================================================
 @echo off
 title AI2C Local Server
 echo Starting local server on port 8000...
-cd /d "C:\Users\nikki\OneDrive\Documents\GitHub\ai2c.github.io"
+cd /d "C:\Users\nikki\OneDrive\Desktop\Documents\GitHub\ai2c.github.io"
 if errorlevel 1 (
     echo Error: Could not change to directory. Check path.
     pause
