@@ -541,7 +541,7 @@
                     </div>
                 </div>
 				
-                <!-- April 29, 2026 (latest) -->
+                <!-- April 29, 2026 -->
                 <div class="publication-card research" data-category="research">
                     <div class="publication-image">
                         <img src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/images/secrets_thinking_unveiled.png" alt="...">
@@ -562,6 +562,29 @@
                                 Read Paper <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
+					</div>
+				</div>
+                <!-- June 7, 2026 (latest) -->
+                <div class="publication-card research" data-category="creative">
+                    <div class="publication-image">
+                        <img src="https://raw.githubusercontent.com/NSC9/ai2c.github.io/main/images/Gemini_Generated_Image_b13v1jb13v1jb13v.png" alt="...">
+                    </div>
+                    <div class="publication-content">
+                        <span class="publication-type">Creative Work</span>
+                        <h3>On Technological Spirituality</h3>
+                        <p>This creative essay examines how film-inspired ideals and a two-pillar life algorithm can help bridge vision and reality in the age of AI.</p>
+                        <div class="publication-meta">
+                            <div class="publication-info">
+                                <div class="publication-date">Published: June 7, 2026</div>
+                                <div class="view-count" data-zenodo-id="20584771">
+                                    <span class="view-label">Views:</span>
+                                    <span class="view-number">Loading...</span>
+                                </div>
+                            </div>
+                            <a href="https://doi.org/10.5281/zenodo.20584771" target="_blank" class="publication-link">
+                                Read Paper <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 			</div>
@@ -571,7 +594,7 @@
         <section class="publication-stats">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>17</h3>
+                    <h3>18</h3>
                     <p>Total Publications</p>
                 </div>
                 <div class="stat-item">
@@ -583,7 +606,7 @@
                     <p>Technical Reports</p>
                 </div>
                 <div class="stat-item">
-                    <h3>5</h3>
+                    <h3>6</h3>
                     <p>Creative Works</p>
                 </div>
             </div>
@@ -726,6 +749,39 @@
 
             // Load view counts for all publications (including the most-recent card)
             loadViewCounts();
+			// Auto-populate Most Recent section from the last publication card
+			function updateMostRecentFromLastCard() {
+				const allCards = document.querySelectorAll('.publications-horizontal .publication-card');
+				const mostRecentSection = document.querySelector('.most-recent-section');
+				
+				if (allCards.length > 0 && mostRecentSection) {
+					const lastCard = allCards[allCards.length - 1]; // Gets the last card (most recent)
+					
+					const lastTitle = lastCard.querySelector('h3').innerText;
+					const lastDesc = lastCard.querySelector('p').innerText;
+					const lastDate = lastCard.querySelector('.publication-date').innerText;
+					const lastLink = lastCard.querySelector('.publication-link').href;
+					const lastImage = lastCard.querySelector('.publication-image img').src;
+					const lastType = lastCard.querySelector('.publication-type').innerText;
+					const lastZenodoId = lastCard.querySelector('.view-count').getAttribute('data-zenodo-id');
+					
+					// Update the featured card in most-recent section
+					const featuredCard = mostRecentSection.querySelector('.publication-card');
+					featuredCard.querySelector('h3').innerText = lastTitle;
+					featuredCard.querySelector('p').innerText = lastDesc;
+					featuredCard.querySelector('.publication-date').innerText = lastDate;
+					featuredCard.querySelector('.publication-link').href = lastLink;
+					featuredCard.querySelector('.publication-image img').src = lastImage;
+					featuredCard.querySelector('.publication-type').innerText = lastType;
+					featuredCard.querySelector('.view-count').setAttribute('data-zenodo-id', lastZenodoId);
+					
+					// Reload view count for updated card
+					loadViewCounts();
+				}
+			}
+
+// Call this function after publications load
+updateMostRecentFromLastCard();
         });
 
         // Function to fetch view counts from Zenodo API
